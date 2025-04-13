@@ -189,9 +189,7 @@ module.exports = {
             </code>
           </pre>
         </Card>
-      </div></pre>
-        </Card >
-      </div >
+      </div>
 
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">4. Import global styles</h2>
@@ -234,7 +232,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`import { Button } from './components/ui/button'
+              {`import { Button } from './components/ui/button'
 
 export default function MyComponent() {
   return (
@@ -249,10 +247,10 @@ export default function MyComponent() {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">7. Customize as needed</h2>
         <p className="text-muted-foreground">
-          Feel free to customize the components, styles, and configurations to fit your project's specific needs. You can modify the Tailwind config, adjust the global styles, or extend the components as required.
+          Feel free to customize the components, styles, and theme variables to match your project's needs.
         </p>
       </div>
-    </div >
+    </div>
   )
 }
 

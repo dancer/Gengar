@@ -31,9 +31,9 @@ export default function DocsPage() {
         </Card>
         <Card className="border-border bg-background p-6">
           <Zap className="h-8 w-8 text-foreground" />
-          <h2 className="mt-4 font-mono text-xl font-bold text-foreground">Lightning Fast</h2>
+          <h2 className="mt-4 font-mono text-xl font-bold text-foreground">Fully Customizable</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Optimized for performance with zero unnecessary overhead.
+            Every component can be styled and themed to match your brand.
           </p>
         </Card>
       </div>
@@ -42,14 +42,21 @@ export default function DocsPage() {
         <h2 className="text-2xl font-bold text-foreground">Installation</h2>
         <Card className="overflow-hidden border-border bg-background">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <div className="flex-1" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
+            <span className="ml-2 text-sm text-muted-foreground">components/ui/button.tsx</span>
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              npm install @gengar/ui
+              {`// Copy the components you need into your project
+// Each component page has the full source code
+
+components/
+  └── ui/
+      ├── button.tsx
+      ├── card.tsx
+      └── ... other components`}
             </code>
           </pre>
         </Card>
@@ -59,18 +66,18 @@ export default function DocsPage() {
         <h2 className="text-2xl font-bold text-foreground">Quick Start</h2>
         <Card className="overflow-hidden border-border bg-background">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <div className="h-3 w-3 rounded-full bg-destructive" />
-            <span className="ml-2 text-sm text-muted-foreground">App.tsx</span>
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
+            <span className="ml-2 text-sm text-muted-foreground">app/page.tsx</span>
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              {`import { Button } from '@gengar/ui'
+              {`import { Button } from '@/components/ui/button'
 
-export default function App() {
+export default function Page() {
   return (
-    <Button variant="terminal">
+    <Button>
       Hello, Terminal!
     </Button>
   )
