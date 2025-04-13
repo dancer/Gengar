@@ -15,7 +15,7 @@ export function Footer() {
             <Github className="h-5 w-5" />
           </a>
           <span className="text-sm text-black/70 dark:text-white/70">
-            © 2024 Gengar UI
+            © 2025 Gengar UI
           </span>
         </div>
       </div>
