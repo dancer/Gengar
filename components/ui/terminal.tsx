@@ -52,7 +52,7 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
       case "date":
         return new Date().toLocaleString()
       case "whoami":
-        return "guest@lineal-ui"
+        return "guest@gengar-ui"
       default:
         if (cmd.startsWith("echo ")) {
           return cmd.slice(5)
@@ -100,7 +100,7 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
             style={{ caretColor: 'transparent' }}
             aria-label="Terminal input"
           />
-          <span 
+          <span
             className="w-2 h-5 bg-white inline-block animate-blink"
             style={{ transform: `translateX(${cursorPosition * 8}px)` }}
           />

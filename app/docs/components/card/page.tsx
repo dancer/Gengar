@@ -17,28 +17,28 @@ export default function CardPage() {
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList className="bg-background border border-border">
+          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-muted">Preview</TabsTrigger>
+          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-muted">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <div className="flex flex-wrap gap-6">
             {/* Terminal Output Card */}
-            <Card className="bg-black border-white/10 w-[350px] shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <Card className="w-[350px] shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Terminal className="h-4 w-4 text-white/70" />
-                  <CardTitle className="text-white text-sm">terminal_output.log</CardTitle>
+                  <Terminal className="h-4 w-4 text-muted-foreground" />
+                  <CardTitle className="text-sm">terminal_output.log</CardTitle>
                 </div>
                 <CardDescription className="font-mono text-xs">Last updated: 2 mins ago</CardDescription>
               </CardHeader>
               <CardContent className="font-mono text-sm">
-                <div className="text-green-400">$ npm install lineal-ui</div>
-                <div className="text-white/70">Installing dependencies...</div>
-                <div className="text-white/70">Added 42 packages</div>
+                <div className="text-green-400">$ npm install gengar-ui</div>
+                <div className="text-muted-foreground">Installing dependencies...</div>
+                <div className="text-muted-foreground">Added 42 packages</div>
                 <div className="text-green-400">Done in 3.21s</div>
               </CardContent>
-              <CardFooter className="border-t border-white/10 bg-white/5">
+              <CardFooter className="border-t border-border bg-muted/50">
                 <Button variant="outline" size="sm" className="gap-2">
                   <FileCode className="h-4 w-4" />
                   View Full Log
@@ -47,38 +47,38 @@ export default function CardPage() {
             </Card>
 
             {/* Error Card */}
-            <Card className="bg-black border-red-500/20 w-[350px] shadow-[0_0_15px_rgba(255,0,0,0.1)]">
+            <Card className="border-destructive/20 w-[350px] shadow-[0_0_15px_rgba(255,0,0,0.1)]">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <AlertCircle className="h-4 w-4 text-red-500" />
-                  <CardTitle className="text-red-500 text-sm">Process Failed</CardTitle>
+                  <AlertCircle className="h-4 w-4 text-destructive" />
+                  <CardTitle className="text-sm text-destructive">Process Failed</CardTitle>
                 </div>
-                <CardDescription className="font-mono text-xs text-red-500/70">Error Code: 127</CardDescription>
+                <CardDescription className="font-mono text-xs text-destructive/70">Error Code: 127</CardDescription>
               </CardHeader>
-              <CardContent className="font-mono text-sm text-red-500/90">
+              <CardContent className="font-mono text-sm text-destructive/90">
                 <p>Command 'build' not found in path.</p>
                 <p>Check your configuration and try again.</p>
               </CardContent>
-              <CardFooter className="border-t border-red-500/20 bg-red-500/5">
+              <CardFooter className="border-t border-destructive/20 bg-destructive/5">
                 <Button variant="destructive" size="sm">Retry Process</Button>
               </CardFooter>
             </Card>
           </div>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
               <div className="h-3 w-3 rounded-full bg-red-500" />
               <div className="h-3 w-3 rounded-full bg-yellow-500" />
               <div className="h-3 w-3 rounded-full bg-green-500" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">
-{`import * as React from "react"
+                {`import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const Card = React.forwardRef<
@@ -88,7 +88,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-sm border border-white/10 bg-black text-white shadow-[0_0_15px_rgba(255,255,255,0.1)]",
+      "rounded-sm border border-border bg-background text-foreground shadow-sm",
       className
     )}
     {...props}
@@ -115,7 +115,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "font-mono text-sm font-medium leading-none tracking-tight",
+      "text-2xl font-semibold leading-none tracking-tight",
       className
     )}
     {...props}
@@ -129,7 +129,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-white/70", className)}
+    className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
 ))
@@ -165,17 +165,17 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
       {/* Installation */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <div className="h-3 w-3 rounded-full bg-red-500" />
             <div className="h-3 w-3 rounded-full bg-yellow-500" />
             <div className="h-3 w-3 rounded-full bg-green-500" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               npm install class-variance-authority lucide-react
             </code>
@@ -186,19 +186,19 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
       {/* Usage */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <div className="h-3 w-3 rounded-full bg-red-500" />
             <div className="h-3 w-3 rounded-full bg-yellow-500" />
             <div className="h-3 w-3 rounded-full bg-green-500" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
-{`import { Terminal } from "lucide-react"
+              {`import { Terminal } from "lucide-react"
 import {
   Card,
   CardContent,
@@ -210,18 +210,18 @@ import {
 
 export function CardDemo() {
   return (
-    <Card className="bg-black border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+    <Card className="shadow-[0_0_15px_rgba(255,255,255,0.1)]">
       <CardHeader>
         <div className="flex items-center gap-2">
-          <Terminal className="h-4 w-4 text-white/70" />
-          <CardTitle className="text-white text-sm">terminal_output.log</CardTitle>
+          <Terminal className="h-4 w-4 text-muted-foreground" />
+          <CardTitle className="text-sm">terminal_output.log</CardTitle>
         </div>
         <CardDescription className="font-mono text-xs">Last updated: 2 mins ago</CardDescription>
       </CardHeader>
-      <CardContent className="font-mono text-sm text-white/70">
+      <CardContent className="font-mono text-sm text-muted-foreground">
         <p>Process output will appear here...</p>
       </CardContent>
-      <CardFooter className="border-t border-white/10 bg-white/5">
+      <CardFooter className="border-t border-border bg-muted/50">
         <Button variant="outline" size="sm">View Details</Button>
       </CardFooter>
     </Card>
@@ -235,13 +235,13 @@ export function CardDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/button" className="text-white hover:text-white/80">
+          <Link href="/docs/components/button" className="hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Button
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/dialog" className="text-white hover:text-white/80">
+          <Link href="/docs/components/dialog" className="hover:text-muted-foreground">
             Dialog
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

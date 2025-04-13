@@ -5,9 +5,9 @@ export default function LaravelInstallationPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Laravel Installation</h1>
       <p className="text-muted-foreground">
-        Follow these steps to install and set up Lineal UI with Laravel.
+        Follow these steps to install and set up Gengar UI with Laravel.
       </p>
-      
+
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">1. Create a new Laravel project</h2>
         <Card className="overflow-hidden border-border bg-background">
@@ -19,7 +19,7 @@ export default function LaravelInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              composer create-project laravel/laravel my-lineal-ui-app
+              composer create-project laravel/laravel my-gengar-ui-app
             </code>
           </pre>
         </Card>
@@ -72,7 +72,7 @@ export default function LaravelInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`/** @type {import('tailwindcss').Config} */
+              {`/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -159,7 +159,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`@tailwind base;
+              {`@tailwind base;
 @tailwind components;
 @tailwind utilities;
  
@@ -237,7 +237,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`import { defineConfig } from 'vite';
+              {`import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
@@ -254,9 +254,9 @@ export default defineConfig({
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">6. Start using Lineal UI components</h2>
+        <h2 className="text-xl font-semibold text-foreground">6. Start using Gengar UI components</h2>
         <p className="text-muted-foreground">
-          You can now start using Lineal UI components in your Laravel project. Copy the component files you need from our documentation and use them in your Blade views or JavaScript components.
+          You can now start using Gengar UI components in your Laravel project. Copy the component files you need from our documentation and use them in your Blade views or JavaScript components.
         </p>
       </div>
     </div>

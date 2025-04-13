@@ -7,7 +7,7 @@ export default function DocsPage() {
   return (
     <div className="space-y-8 pb-8">
       <div className="space-y-4">
-        <h1 className="font-mono text-4xl font-bold text-foreground">Lineal UI</h1>
+        <h1 className="font-mono text-4xl font-bold text-foreground">Gengar UI</h1>
         <p className="text-lg text-muted-foreground">
           A modern terminal-inspired component library for React applications.
           Built with performance and developer experience in mind.
@@ -49,7 +49,7 @@ export default function DocsPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              npm install @lineal/ui
+              npm install @gengar/ui
             </code>
           </pre>
         </Card>
@@ -66,7 +66,7 @@ export default function DocsPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              {`import { Button } from '@lineal/ui'
+              {`import { Button } from '@gengar/ui'
 
 export default function App() {
   return (

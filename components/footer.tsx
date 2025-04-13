@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto flex justify-end items-center pr-6 pl-0 max-w-screen-2xl">
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/lineal/ui"
+            href="https://github.com/dancer/gengar"
             target="_blank"
             rel="noopener noreferrer"
             className="text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white"
@@ -15,7 +15,7 @@ export function Footer() {
             <Github className="h-5 w-5" />
           </a>
           <span className="text-sm text-black/70 dark:text-white/70">
-            © 2024 Lineal UI
+            © 2024 Gengar UI
           </span>
         </div>
       </div>

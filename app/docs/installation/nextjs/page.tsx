@@ -6,7 +6,7 @@ export default function NextjsInstallationPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Next.js Installation</h1>
       <p className="text-muted-foreground">
-        Follow these steps to install and set up Lineal UI with Next.js.
+        Follow these steps to install and set up Gengar UI with Next.js.
       </p>
 
       <div className="space-y-4">
@@ -15,7 +15,7 @@ export default function NextjsInstallationPage() {
           <TerminalWindow title="terminal">
             <pre className="p-4">
               <code className="text-sm text-foreground">
-                npx create-next-app@latest my-lineal-ui-app --typescript --tailwind --eslint
+                npx create-next-app@latest my-gengar-ui-app --typescript --tailwind --eslint
               </code>
             </pre>
           </TerminalWindow>

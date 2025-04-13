@@ -5,9 +5,9 @@ export default function ManualInstallationPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Manual Installation</h1>
       <p className="text-muted-foreground">
-        Follow these steps to manually install and set up Lineal UI in your project.
+        Follow these steps to manually install and set up Gengar UI in your project.
       </p>
-      
+
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">1. Install dependencies</h2>
         <Card className="overflow-hidden border-border bg-background">
@@ -39,7 +39,7 @@ export default function ManualInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`/** @type {import('tailwindcss').Config} */
+              {`/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -127,7 +127,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`@tailwind base;
+              {`@tailwind base;
 @tailwind components;
 @tailwind utilities;
  
@@ -190,8 +190,8 @@ module.exports = {
           </pre>
         </Card>
       </div></pre>
-        </Card>
-      </div>
+        </Card >
+      </div >
 
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">4. Import global styles</h2>
@@ -216,7 +216,7 @@ module.exports = {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">5. Set up components</h2>
         <p className="text-muted-foreground">
-          Create a components folder in your project and copy the Lineal UI component files you need into this folder. Make sure to adjust import paths as necessary.
+          Create a components folder in your project and copy the Gengar UI component files you need into this folder. Make sure to adjust import paths as necessary.
         </p>
       </div>
 
@@ -252,7 +252,7 @@ export default function MyComponent() {
           Feel free to customize the components, styles, and configurations to fit your project's specific needs. You can modify the Tailwind config, adjust the global styles, or extend the components as required.
         </p>
       </div>
-    </div>
+    </div >
   )
 }
 

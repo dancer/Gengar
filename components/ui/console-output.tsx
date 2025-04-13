@@ -10,7 +10,7 @@ export function ConsoleOutput() {
 
   React.useEffect(() => {
     const initialOutput = [
-      "Welcome to Lineal UI Console",
+      "Welcome to Gengar UI Console",
       "Type 'help' for a list of commands",
       "",
     ]
@@ -48,7 +48,7 @@ export function ConsoleOutput() {
   }
 
   return (
-    <div className="bg-black text-white p-4 rounded-md font-mono text-sm h-64 overflow-auto">
+    <div className="bg-background text-foreground p-4 rounded-md font-mono text-sm h-64 overflow-auto">
       <ScrollArea className="h-64">
         <SyntaxHighlighter
           language="bash"
@@ -73,7 +73,7 @@ export function ConsoleOutput() {
         <input
           type="text"
           name="command"
-          className="bg-transparent border-none outline-none w-full"
+          className="bg-transparent border-none outline-none w-full text-foreground placeholder:text-muted-foreground"
           autoComplete="off"
         />
       </form>

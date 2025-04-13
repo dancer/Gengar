@@ -31,7 +31,7 @@ export default function Home() {
             </Link>
           </Button>
           <Button variant="outline" asChild className="flex items-center">
-            <a href="https://github.com/lineal/ui" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/dancer/gengar" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </Button>

@@ -15,7 +15,7 @@ interface TerminalProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Terminal({ title = "Terminal", className, ...props }: TerminalProps) {
   const [history, setHistory] = React.useState<string[]>([
-    "Welcome to Lineal UI Terminal",
+    "Welcome to Gengar UI Terminal",
     "Type 'help' for available commands",
     ""
   ])
@@ -57,9 +57,9 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
       case "date":
         return new Date().toLocaleString()
       case "whoami":
-        return "guest@lineal-ui"
+        return "guest@gengar-ui"
       case "version":
-        return "Lineal UI Terminal v1.0.0"
+        return "Gengar UI Terminal v1.0.0"
       default:
         return `Command not found: ${cmd}. Type 'help' for available commands.`
     }
@@ -150,7 +150,7 @@ interface TerminalProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Terminal({ title = "Terminal", className, ...props }: TerminalProps) {
   const [history, setHistory] = React.useState<string[]>([
-    "Welcome to Lineal UI Terminal",
+    "Welcome to Gengar UI Terminal",
     "Type 'help' for available commands",
     ""
   ])
@@ -194,9 +194,9 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
       case "date":
         return new Date().toLocaleString()
       case "whoami":
-        return "guest@lineal-ui"
+        return "guest@gengar-ui"
       case "version":
-        return "Lineal UI Terminal v1.0.0"
+        return "Gengar UI Terminal v1.0.0"
       default:
         return \`Command not found: \${cmd}. Type 'help' for available commands.\`
     }

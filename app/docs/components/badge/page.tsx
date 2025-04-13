@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -18,12 +20,12 @@ export default function BadgePage() {
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList className="bg-background border border-border">
+          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-muted">Preview</TabsTrigger>
+          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-muted">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <div className="flex flex-col gap-6">
               {/* Status Badges */}
               <div className="flex flex-wrap gap-4">
@@ -55,44 +57,44 @@ export default function BadgePage() {
 
               {/* Status Indicators */}
               <div className="flex flex-wrap gap-4">
-                <Badge className="h-5 w-5 p-0 flex items-center justify-center rounded-none" />
-                <Badge variant="secondary" className="h-5 w-5 p-0 flex items-center justify-center rounded-none" />
-                <Badge variant="outline" className="h-5 w-5 p-0 flex items-center justify-center rounded-none" />
-                <Badge variant="destructive" className="h-5 w-5 p-0 flex items-center justify-center rounded-none" />
+                <Badge className="h-5 w-5 p-0 flex items-center justify-center" />
+                <Badge variant="secondary" className="h-5 w-5 p-0 flex items-center justify-center" />
+                <Badge variant="outline" className="h-5 w-5 p-0 flex items-center justify-center" />
+                <Badge variant="destructive" className="h-5 w-5 p-0 flex items-center justify-center" />
               </div>
             </div>
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
               <div className="h-3 w-3 rounded-full bg-red-500" />
               <div className="h-3 w-3 rounded-full bg-yellow-500" />
               <div className="h-3 w-3 rounded-full bg-green-500" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">
-{`import * as React from "react"
+                {`import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-none px-2.5 py-0.5 text-xs font-mono transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center rounded px-2.5 py-0.5 text-xs font-mono transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
       variant: {
         default:
-          "bg-black border border-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:bg-white/10",
+          "bg-background text-foreground border border-border shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:bg-muted",
         secondary:
-          "bg-black border border-white/10 text-white/70 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:bg-white/10",
+          "bg-background text-muted-foreground border border-border shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:bg-muted",
         destructive:
-          "bg-black border border-red-500/50 text-red-500 shadow-[0_0_10px_rgba(255,0,0,0.1)] hover:bg-red-950/30",
+          "bg-background text-destructive border border-destructive/50 shadow-[0_0_10px_rgba(255,0,0,0.1)] hover:bg-destructive/10",
         outline:
-          "bg-black border border-white/20 text-white shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:bg-white/10",
+          "bg-background text-foreground border border-border shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:bg-muted",
       },
     },
     defaultVariants: {
@@ -121,17 +123,17 @@ export { Badge, badgeVariants }`}
       {/* Installation */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <div className="h-3 w-3 rounded-full bg-red-500" />
             <div className="h-3 w-3 rounded-full bg-yellow-500" />
             <div className="h-3 w-3 rounded-full bg-green-500" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               npm install class-variance-authority lucide-react
             </code>
@@ -142,19 +144,19 @@ export { Badge, badgeVariants }`}
       {/* Usage */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <div className="h-3 w-3 rounded-full bg-red-500" />
             <div className="h-3 w-3 rounded-full bg-yellow-500" />
             <div className="h-3 w-3 rounded-full bg-green-500" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
-{`import { Badge } from "@/components/ui/badge"
+              {`import { Badge } from "@/components/ui/badge"
 import { Terminal, AlertCircle, CheckCircle2, XCircle } from 'lucide-react'
 
 export function BadgeDemo() {
@@ -172,7 +174,7 @@ export function BadgeDemo() {
       {/* Status Indicator */}
       <Badge 
         variant="outline" 
-        className="h-5 w-5 p-0 flex items-center justify-center rounded-none" 
+        className="h-5 w-5 p-0 flex items-center justify-center" 
       />
     </div>
   )
@@ -185,13 +187,13 @@ export function BadgeDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/avatar" className="text-white hover:text-white/80">
+          <Link href="/docs/components/avatar" className="hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Avatar
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/button" className="text-white hover:text-white/80">
+          <Link href="/docs/components/button" className="hover:text-muted-foreground">
             Button
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
