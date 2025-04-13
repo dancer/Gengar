@@ -38,7 +38,7 @@ A modern, terminal-inspired component library for React applications. Built with
 
 ## Getting Started
 
-1. **Copy Components**: Visit our [documentation](https://github.com/dancer/gengar) and copy the components you need.
+1. **Copy Components**: Visit our [documentation](https://geng.ar/docs) and copy the components you need.
 
 2. **Install Dependencies**:
 
@@ -123,5 +123,5 @@ Built with:
 
 ## Support
 
-- [Documentation](https://github.com/dancer/gengar)
+- [Documentation](https://geng.ar/docs)
 - [Issue Tracker](https://github.com/dancer/gengar/issues)
