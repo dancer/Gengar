@@ -98,7 +98,7 @@ export default function Page() {
           variant="outline"
           asChild
         >
-          <Link href="/components">View Components</Link>
+          <Link href="/docs/components/action-bar">View Components</Link>
         </Button>
       </div>
     </div>
