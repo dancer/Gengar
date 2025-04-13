@@ -44,30 +44,30 @@ export default function ProgressBarPage() {
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList className="bg-background border border-border">
+          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-accent">Preview</TabsTrigger>
+          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-accent">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <div className="space-y-2">
-              <div className="text-sm text-white/70">{status}</div>
+              <div className="text-sm text-muted-foreground">{status}</div>
               <ProgressBar progress={demoProgress} />
             </div>
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">
                 {`import { ProgressBar } from "@/components/ui/progress-bar"
 import { useState, useEffect } from "react"
@@ -98,7 +98,7 @@ export function ProcessStatus() {
 
   return (
     <div className="space-y-2">
-      <div className="text-sm text-white/70">{status}</div>
+      <div className="text-sm text-muted-foreground">{status}</div>
       <ProgressBar progress={progress} />
     </div>
   )
@@ -112,17 +112,17 @@ export function ProcessStatus() {
       {/* Installation */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               npm install @radix-ui/react-progress
             </code>
@@ -133,24 +133,24 @@ export function ProcessStatus() {
       {/* Usage */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               {`import { ProgressBar } from "@/components/ui/progress-bar"
 
 export function MyComponent() {
   return (
     <div className="space-y-2">
-      <div className="text-sm text-white/70">Processing...</div>
+      <div className="text-sm text-muted-foreground">Processing...</div>
       <ProgressBar progress={75} />
     </div>
   )
@@ -163,13 +163,13 @@ export function MyComponent() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/input" className="text-white hover:text-white/80">
+          <Link href="/docs/components/input" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Input
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/select" className="text-white hover:text-white/80">
+          <Link href="/docs/components/select" className="text-foreground hover:text-muted-foreground">
             Select
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

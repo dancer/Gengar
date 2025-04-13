@@ -5,9 +5,9 @@ export default function ViteInstallationPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Vite Installation</h1>
       <p className="text-muted-foreground">
-        Follow these steps to install and set up Lineal UI with Vite.
+        Follow these steps to install and set up Gengar UI with Vite.
       </p>
-      
+
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">1. Create a new Vite project</h2>
         <Card className="overflow-hidden border-border bg-background">
@@ -19,7 +19,7 @@ export default function ViteInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              npm create vite@latest my-lineal-ui-app -- --template react-ts
+              npm create vite@latest my-gengar-ui-app -- --template react-ts
             </code>
           </pre>
         </Card>
@@ -72,7 +72,7 @@ export default function ViteInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`/** @type {import('tailwindcss').Config} */
+              {`/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: [
@@ -158,7 +158,7 @@ export default {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`@tailwind base;
+              {`@tailwind base;
 @tailwind components;
 @tailwind utilities;
  
@@ -223,9 +223,9 @@ export default {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">5. Start using Lineal UI components</h2>
+        <h2 className="text-xl font-semibold text-foreground">5. Start using Gengar UI components</h2>
         <p className="text-muted-foreground">
-          You can now start using Lineal UI components in your Vite project. Copy the component files you need from our documentation and use them in your pages or components.
+          You can now start using Gengar UI components in your Vite project. Copy the component files you need from our documentation and use them in your pages or components.
         </p>
       </div>
     </div>

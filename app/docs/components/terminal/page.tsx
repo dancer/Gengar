@@ -66,18 +66,18 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
   }
 
   return (
-    <div className={cn("bg-black text-white rounded-none overflow-hidden font-mono text-sm border border-white/20", className)} {...props}>
-      <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
+    <div className={cn("bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border", className)} {...props}>
+      <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-white/70">{title}</div>
+        <div className="text-center flex-grow text-muted-foreground">{title}</div>
         <div className="flex space-x-2">
-          <Minus className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <Square className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <X className="w-4 h-4 text-white/50 hover:text-white/70" />
+          <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <X className="w-4 h-4 text-muted-foreground hover:text-foreground" />
         </div>
       </div>
       <ScrollArea
@@ -91,12 +91,12 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
           <div key={index} className="mb-1 whitespace-pre-wrap">{line}</div>
         ))}
         <form onSubmit={handleSubmit} className="flex items-center">
-          <span className="mr-2 text-green-400">$</span>
+          <span className="mr-2 text-[hsl(var(--terminal-green))]">$</span>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-grow bg-transparent outline-none text-white/90"
+            className="flex-grow bg-transparent outline-none text-foreground/90"
             aria-label="Terminal input"
           />
         </form>
@@ -116,27 +116,27 @@ export default function TerminalPage() {
       </div>
 
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <Terminal />
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">{`"use client"
 
 import * as React from "react"
@@ -204,20 +204,20 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
 
   return (
     <div className={cn(
-      "bg-black text-white rounded-none overflow-hidden font-mono text-sm border border-white/20",
+      "bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border",
       className
     )} {...props}>
-      <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
+      <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-white/70">{title}</div>
+        <div className="text-center flex-grow text-muted-foreground">{title}</div>
         <div className="flex space-x-2">
-          <Minus className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <Square className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <X className="w-4 h-4 text-white/50 hover:text-white/70" />
+          <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <X className="w-4 h-4 text-muted-foreground hover:text-foreground" />
         </div>
       </div>
       <ScrollArea 
@@ -231,12 +231,12 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
           <div key={index} className="mb-1 whitespace-pre-wrap">{line}</div>
         ))}
         <form onSubmit={handleSubmit} className="flex items-center">
-          <span className="mr-2 text-green-400">$</span>
+          <span className="mr-2 text-[hsl(var(--terminal-green))]">$</span>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-grow bg-transparent outline-none text-white/90"
+            className="flex-grow bg-transparent outline-none text-foreground/90"
             aria-label="Terminal input"
           />
         </form>
@@ -251,17 +251,17 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">npm install @radix-ui/react-scroll-area lucide-react</code>
           </pre>
         </Card>
@@ -269,17 +269,17 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">{`import { Terminal } from "@/components/ui/terminal"
 
 export function MyComponent() {
@@ -293,13 +293,13 @@ export function MyComponent() {
 
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/tree-view" className="text-white hover:text-white/80">
+          <Link href="/docs/components/tree-view" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Tree View
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/ascii-art-generator" className="text-white hover:text-white/80">
+          <Link href="/docs/components/ascii-art-generator" className="text-foreground hover:text-muted-foreground">
             ASCII Art Generator
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

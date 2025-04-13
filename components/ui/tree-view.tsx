@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils"
 
 const TreeItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { 
-    isFolder?: boolean; 
+  React.HTMLAttributes<HTMLDivElement> & {
+    isFolder?: boolean;
     isOpen?: boolean;
     level?: number;
     isLast?: boolean;
@@ -23,20 +23,20 @@ const TreeItem = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "flex items-center py-0.5 font-mono text-sm text-white/90 hover:text-white hover:bg-white/5",
+        "flex items-center py-0.5 font-mono text-sm text-foreground/90 hover:text-foreground hover:bg-muted/50",
         isFolder && "cursor-pointer",
         className
       )}
       {...props}
     >
-      <span className="text-white/50 select-none whitespace-pre">{indent}{prefix} </span>
+      <span className="text-muted-foreground select-none whitespace-pre">{indent}{prefix} </span>
       {isFolder && (
-        <span className="text-white/70 mr-1.5 select-none">{folderPrefix}</span>
+        <span className="text-muted-foreground mr-1.5 select-none">{folderPrefix}</span>
       )}
       {isFolder ? (
-        <Folder className="mr-2 h-3.5 w-3.5 shrink-0 text-white/70" />
+        <Folder className="mr-2 h-3.5 w-3.5 shrink-0 text-muted-foreground" />
       ) : (
-        <File className="mr-2 h-3.5 w-3.5 shrink-0 text-white/70" />
+        <File className="mr-2 h-3.5 w-3.5 shrink-0 text-muted-foreground" />
       )}
       {children}
     </div>
@@ -72,19 +72,19 @@ export function TreeView() {
   }
 
   return (
-    <div className="text-white font-mono">
-      <TreeItem 
-        isFolder 
-        isOpen={openFolders.includes("src")} 
+    <div className="text-foreground font-mono">
+      <TreeItem
+        isFolder
+        isOpen={openFolders.includes("src")}
         onClick={() => toggleFolder("src")}
         level={0}
       >
         src
       </TreeItem>
       <TreeItemGroup open={openFolders.includes("src")}>
-        <TreeItem 
-          isFolder 
-          isOpen={openFolders.includes("components")} 
+        <TreeItem
+          isFolder
+          isOpen={openFolders.includes("components")}
           onClick={() => toggleFolder("components")}
           level={1}
         >
@@ -95,9 +95,9 @@ export function TreeView() {
           <TreeItem level={2}>Card.tsx</TreeItem>
           <TreeItem level={2} isLast>Input.tsx</TreeItem>
         </TreeItemGroup>
-        <TreeItem 
-          isFolder 
-          isOpen={openFolders.includes("pages")} 
+        <TreeItem
+          isFolder
+          isOpen={openFolders.includes("pages")}
           onClick={() => toggleFolder("pages")}
           level={1}
         >
@@ -108,9 +108,9 @@ export function TreeView() {
           <TreeItem level={2}>about.tsx</TreeItem>
           <TreeItem level={2} isLast>contact.tsx</TreeItem>
         </TreeItemGroup>
-        <TreeItem 
-          isFolder 
-          isOpen={openFolders.includes("utils")} 
+        <TreeItem
+          isFolder
+          isOpen={openFolders.includes("utils")}
           onClick={() => toggleFolder("utils")}
           level={1}
           isLast

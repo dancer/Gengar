@@ -18,27 +18,27 @@ export default function FileExplorerPage() {
       </div>
 
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <FileExplorer />
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">{`"use client"
 
 import * as React from "react"
@@ -136,48 +136,48 @@ export function FileExplorer() {
       <div
         key={name}
         className={\`flex items-center p-2 cursor-pointer \${
-          selectedItem === name ? 'bg-white/10' : 'hover:bg-white/5'
+          selectedItem === name ? 'bg-muted/50' : 'hover:bg-muted/20'
         }\`}
         onClick={() => selectItem(name)}
         onDoubleClick={() => item.type === 'folder' && navigateToFolder(name)}
       >
         {item.type === 'folder' ? (
-          <Folder className="mr-2 h-4 w-4 text-white/70" />
+          <Folder className="mr-2 h-4 w-4 text-muted-foreground" />
         ) : (
-          <File className="mr-2 h-4 w-4 text-white/70" />
+          <File className="mr-2 h-4 w-4 text-muted-foreground" />
         )}
-        <span className="text-white/90">{name}</span>
+        <span className="text-foreground/90">{name}</span>
       </div>
     ))
   }
 
   return (
-    <div className="bg-black text-white rounded-none overflow-hidden font-mono text-sm border border-white/20">
-      <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
+    <div className="bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border">
+      <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-white/70">File Explorer</div>
+        <div className="text-center flex-grow text-muted-foreground">File Explorer</div>
         <div className="flex space-x-2">
-          <Minus className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <Square className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <X className="w-4 h-4 text-white/50 hover:text-white/70" />
+          <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <X className="w-4 h-4 text-muted-foreground hover:text-foreground" />
         </div>
       </div>
-      <div className="bg-black/50 p-2 flex items-center justify-between border-b border-white/10">
+      <div className="bg-background/50 p-2 flex items-center justify-between border-b border-border">
         <div className="flex items-center">
           <Button
             variant="ghost"
             size="icon"
             onClick={navigateUp}
             disabled={currentPath.length === 0}
-            className="mr-2 text-white/70 hover:text-white hover:bg-white/10"
+            className="mr-2 text-muted-foreground hover:text-foreground hover:bg-muted"
           >
             <ArrowLeft className="h-4 w-4" />
           </Button>
-          <span className="text-white/70">
+          <span className="text-muted-foreground">
             {currentPath.length === 0 ? 'Root' : currentPath.join(' / ')}
           </span>
         </div>
@@ -187,13 +187,13 @@ export function FileExplorer() {
             placeholder="New item name"
             value={newItemName}
             onChange={(e) => setNewItemName(e.target.value)}
-            className="bg-black border-white/10 text-white h-8 text-xs"
+            className="bg-background border-border text-foreground h-8 text-xs"
           />
           <Button 
             variant="ghost" 
             size="icon" 
             onClick={() => addItem('file')}
-            className="h-8 w-8 text-white/70 hover:text-white hover:bg-white/10"
+            className="h-8 w-8 text-muted-foreground hover:text-foreground hover:bg-muted"
           >
             <File className="h-4 w-4" />
           </Button>
@@ -201,7 +201,7 @@ export function FileExplorer() {
             variant="ghost" 
             size="icon" 
             onClick={() => addItem('folder')}
-            className="h-8 w-8 text-white/70 hover:text-white hover:bg-white/10"
+            className="h-8 w-8 text-muted-foreground hover:text-foreground hover:bg-muted"
           >
             <Folder className="h-4 w-4" />
           </Button>
@@ -210,7 +210,7 @@ export function FileExplorer() {
             size="icon" 
             onClick={deleteSelectedItem} 
             disabled={!selectedItem}
-            className="h-8 w-8 text-white/70 hover:text-white hover:bg-white/10 disabled:opacity-50"
+            className="h-8 w-8 text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-50"
           >
             <Trash2 className="h-4 w-4" />
           </Button>
@@ -231,17 +231,17 @@ export function FileExplorer() {
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">npm install @radix-ui/react-scroll-area lucide-react</code>
           </pre>
         </Card>
@@ -249,22 +249,22 @@ export function FileExplorer() {
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">{`import { FileExplorer } from "@/components/ui/file-explorer"
 
 export default function MyComponent() {
   return (
-    <div className="p-4 bg-black text-white">
+    <div className="p-4">
       <FileExplorer />
     </div>
   )
@@ -275,13 +275,13 @@ export default function MyComponent() {
 
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/ascii-art-generator" className="text-white hover:text-white/80">
+          <Link href="/docs/components/ascii-art-generator" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             ASCII Art Generator
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/network-monitor" className="text-white hover:text-white/80">
+          <Link href="/docs/components/network-monitor" className="text-foreground hover:text-muted-foreground">
             Network Monitor
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

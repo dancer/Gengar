@@ -18,27 +18,27 @@ export default function TerminalPromptPage() {
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <TerminalPrompt />
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">{`"use client"
 
 import * as React from "react"
@@ -80,7 +80,7 @@ const ScrollBar = React.forwardRef<
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-white/10" />
+    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-muted" />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ))
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
@@ -122,7 +122,7 @@ export function TerminalPrompt() {
   }
 
   return (
-    <div className="bg-black text-white p-4 rounded-md font-mono text-sm">
+    <div className="bg-background text-foreground p-4 rounded-md font-mono text-sm">
       <ScrollArea className="h-64" ref={scrollAreaRef}>
         {history.map((line, index) => (
           <div key={index}>{line}</div>
@@ -151,17 +151,17 @@ export function TerminalPrompt() {
       {/* Installation */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               npm install @radix-ui/react-scroll-area
             </code>
@@ -172,19 +172,19 @@ export function TerminalPrompt() {
       {/* Usage */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
-{`import { TerminalPrompt } from "@/components/ui/terminal-prompt"
+              {`import { TerminalPrompt } from "@/components/ui/terminal-prompt"
 
 export function MyComponent() {
   return (
@@ -202,13 +202,13 @@ export function MyComponent() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/tabs" className="text-white hover:text-white/80">
+          <Link href="/docs/components/tabs" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Tabs
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/tooltip" className="text-white hover:text-white/80">
+          <Link href="/docs/components/tooltip" className="text-foreground hover:text-muted-foreground">
             Tooltip
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

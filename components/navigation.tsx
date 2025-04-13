@@ -50,9 +50,7 @@ export function Navigation({ className }: { className?: string }) {
       "h-full bg-white dark:bg-black",
       className
     )}>
-      <div className="flex h-14 items-center border-b border-black/10 dark:border-white/10 px-4">
-        <span className="font-bold">Navigation</span>
-      </div>
+      <div className="h-14 border-b border-black/10 dark:border-white/10" />
       <div className="h-[calc(100vh-3.5rem)] overflow-auto py-2 px-2">
         <Accordion
           type="multiple"

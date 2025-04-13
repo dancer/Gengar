@@ -23,18 +23,18 @@ export default function TooltipPage() {
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <div className="flex items-center gap-4">
               <TooltipProvider>
                 {/* Command Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-white border-white/10 hover:bg-white/5">
+                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
                       <Command className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -46,7 +46,7 @@ export default function TooltipPage() {
                 {/* Terminal Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-white border-white/10 hover:bg-white/5">
+                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
                       <Terminal className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -58,7 +58,7 @@ export default function TooltipPage() {
                 {/* Settings Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-white border-white/10 hover:bg-white/5">
+                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
                       <Settings className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -70,7 +70,7 @@ export default function TooltipPage() {
                 {/* Help Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-white border-white/10 hover:bg-white/5">
+                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
                       <HelpCircle className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -83,19 +83,19 @@ export default function TooltipPage() {
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">
-{`import { Button } from "@/components/ui/button"
+                {`import { Button } from "@/components/ui/button"
 import { Terminal } from 'lucide-react'
 import {
   Tooltip,
@@ -112,7 +112,7 @@ export function TooltipDemo() {
           <Button 
             variant="outline" 
             size="icon"
-            className="text-white border-white/10 hover:bg-white/5"
+            className="text-foreground border-border hover:bg-muted"
           >
             <Terminal className="h-4 w-4" />
           </Button>
@@ -133,17 +133,17 @@ export function TooltipDemo() {
       {/* Installation */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
               npm install @radix-ui/react-tooltip
             </code>
@@ -154,19 +154,19 @@ export function TooltipDemo() {
       {/* Usage */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">
-{`import {
+              {`import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -195,13 +195,13 @@ export function TooltipDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/tabs" className="text-white hover:text-white/80">
+          <Link href="/docs/components/tabs" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Tabs
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/action-bar" className="text-white hover:text-white/80">
+          <Link href="/docs/components/action-bar" className="text-foreground hover:text-muted-foreground">
             Action Bar
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

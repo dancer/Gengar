@@ -35,48 +35,48 @@ export function NetworkMonitor() {
   }, [])
 
   const getStatusColor = (status: number) => {
-    if (status >= 500) return 'text-red-500'
-    if (status >= 400) return 'text-yellow-500'
-    return 'text-green-500'
+    if (status >= 500) return 'text-[hsl(var(--terminal-red))]'
+    if (status >= 400) return 'text-[hsl(var(--terminal-yellow))]'
+    return 'text-[hsl(var(--terminal-green))]'
   }
 
   const getMethodColor = (method: string) => {
     switch (method) {
-      case 'GET': return 'text-blue-500'
-      case 'POST': return 'text-green-500'
-      case 'PUT': return 'text-yellow-500'
-      case 'DELETE': return 'text-red-500'
-      default: return 'text-white'
+      case 'GET': return 'text-[hsl(var(--terminal-blue))]'
+      case 'POST': return 'text-[hsl(var(--terminal-green))]'
+      case 'PUT': return 'text-[hsl(var(--terminal-yellow))]'
+      case 'DELETE': return 'text-[hsl(var(--terminal-red))]'
+      default: return 'text-foreground'
     }
   }
 
   return (
-    <div className="bg-black text-white rounded-none overflow-hidden font-mono text-sm border border-white/20">
-      <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
+    <div className="bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border">
+      <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-white/70">Network Monitor</div>
+        <div className="text-center flex-grow text-muted-foreground">Network Monitor</div>
         <div className="flex space-x-2">
-          <Minus className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <Square className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <X className="w-4 h-4 text-white/50 hover:text-white/70" />
+          <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <X className="w-4 h-4 text-muted-foreground hover:text-foreground" />
         </div>
       </div>
-      <div className="bg-black/50 p-2 flex items-center gap-2 border-b border-white/10">
-        <Activity className="w-4 h-4 text-white/70" />
-        <span className="text-white/70">Live Network Traffic</span>
+      <div className="bg-background/50 p-2 flex items-center gap-2 border-b border-border">
+        <Activity className="w-4 h-4 text-muted-foreground" />
+        <span className="text-muted-foreground">Live Network Traffic</span>
       </div>
       <ScrollArea className="h-[400px]">
         <div className="p-2 space-y-1">
           {activities.map((activity, index) => (
-            <div 
-              key={index} 
-              className="flex items-center gap-3 px-2 py-1.5 hover:bg-white/5 group"
+            <div
+              key={index}
+              className="flex items-center gap-3 px-2 py-1.5 hover:bg-muted/20 group"
             >
-              <span className="text-white/50 text-xs">
+              <span className="text-muted-foreground text-xs">
                 {new Date(activity.timestamp).toLocaleTimeString()}
               </span>
               {activity.method && (
@@ -84,7 +84,7 @@ export function NetworkMonitor() {
                   {activity.method}
                 </span>
               )}
-              <span className="text-white/70 truncate flex-1">
+              <span className="text-muted-foreground truncate flex-1">
                 {activity.url}
               </span>
               {activity.status && (
@@ -93,7 +93,7 @@ export function NetworkMonitor() {
                 </span>
               )}
               {activity.duration && (
-                <span className="text-white/50 font-mono w-16 text-right">
+                <span className="text-muted-foreground font-mono w-16 text-right">
                   {activity.duration}ms
                 </span>
               )}

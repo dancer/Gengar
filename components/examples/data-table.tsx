@@ -13,12 +13,12 @@ export function ExampleDataTable() {
         <tbody>
           <tr className="border-b border-white/10">
             <td className="py-2">001</td>
-            <td className="py-2">John</td>
+            <td className="py-2">Josh</td>
             <td className="py-2">Admin</td>
           </tr>
           <tr>
             <td className="py-2">002</td>
-            <td className="py-2">Jane</td>
+            <td className="py-2">Ashu</td>
             <td className="py-2">User</td>
           </tr>
         </tbody>

@@ -65,18 +65,18 @@ export function AsciiArtGenerator() {
   }
 
   return (
-    <div className="bg-black text-white rounded-none overflow-hidden font-mono text-sm border border-white/20">
-      <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
+    <div className="bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border">
+      <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-white/70">ASCII Art Generator</div>
+        <div className="text-center flex-grow text-muted-foreground">ASCII Art Generator</div>
         <div className="flex space-x-2">
-          <Minus className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <Square className="w-4 h-4 text-white/50 hover:text-white/70" />
-          <X className="w-4 h-4 text-white/50 hover:text-white/70" />
+          <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          <X className="w-4 h-4 text-muted-foreground hover:text-foreground" />
         </div>
       </div>
       <div className="p-4 space-y-4">
@@ -87,11 +87,11 @@ export function AsciiArtGenerator() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="flex-grow bg-black text-white border-white/10"
+            className="flex-grow bg-background text-foreground border-border"
           />
-          <Button 
-            onClick={generateAsciiArt} 
-            className="bg-white text-black hover:bg-white/90"
+          <Button
+            onClick={generateAsciiArt}
+            variant="secondary"
           >
             Generate
           </Button>
@@ -99,7 +99,7 @@ export function AsciiArtGenerator() {
         <Textarea
           value={asciiArt}
           readOnly
-          className="font-mono text-xs bg-black text-white border-white/10 h-40 w-full"
+          className="font-mono text-xs bg-background text-foreground border-border h-40 w-full"
           placeholder="ASCII art will appear here..."
         />
       </div>

@@ -5,9 +5,9 @@ export default function RemixInstallationPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Remix Installation</h1>
       <p className="text-muted-foreground">
-        Follow these steps to install and set up Lineal UI with Remix.
+        Follow these steps to install and set up Gengar UI with Remix.
       </p>
-      
+
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">1. Create a new Remix project</h2>
         <Card className="overflow-hidden border-border bg-background">
@@ -19,7 +19,7 @@ export default function RemixInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-              npx create-remix@latest my-lineal-ui-app
+              npx create-remix@latest my-gengar-ui-app
             </code>
           </pre>
         </Card>
@@ -72,7 +72,7 @@ export default function RemixInstallationPage() {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`/** @type {import('tailwindcss').Config} */
+              {`/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -157,7 +157,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`@tailwind base;
+              {`@tailwind base;
 @tailwind components;
 @tailwind utilities;
  
@@ -235,7 +235,7 @@ module.exports = {
           </div>
           <pre className="p-4">
             <code className="text-sm text-foreground">
-{`import styles from "./styles/global.css"
+              {`import styles from "./styles/global.css"
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }]
@@ -246,9 +246,9 @@ export function links() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">6. Start using Lineal UI components</h2>
+        <h2 className="text-xl font-semibold text-foreground">6. Start using Gengar UI components</h2>
         <p className="text-muted-foreground">
-          You can now start using Lineal UI components in your Remix project. Copy the component files you need from our documentation and use them in your routes or components.
+          You can now start using Gengar UI components in your Remix project. Copy the component files you need from our documentation and use them in your routes or components.
         </p>
       </div>
     </div>

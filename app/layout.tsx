@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils"
 import "./globals.css"
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono'
 })
@@ -37,14 +37,14 @@ export default function RootLayout({
               {!isHomePage && (
                 <>
                   <Navigation className={`w-64 shrink-0 md:block ${isMobileSidebarOpen ? 'block' : 'hidden'} fixed inset-y-0 left-0 z-50 bg-white dark:bg-black overflow-y-auto`} />
-                  <div 
+                  <div
                     className={`fixed inset-0 bg-black bg-opacity-50 z-40 ${isMobileSidebarOpen ? 'block' : 'hidden'} md:hidden`}
                     onClick={() => setIsMobileSidebarOpen(false)}
                   ></div>
                 </>
               )}
               <div className="flex-1 flex flex-col">
-                <div className="sticky top-0 z-50 w-full border-b border-black/10 dark:border-white/10 bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
+                <div className="sticky top-0 z-50 w-full border-b border-black/10 dark:border-white/10 bg-white/95 dark:bg-black/95">
                   <header className="flex h-14 items-center justify-between px-6 max-w-screen-2xl mx-auto">
                     <div className="flex items-center">
                       {!isHomePage && (
@@ -58,15 +58,21 @@ export default function RootLayout({
                           <span className="sr-only">Toggle Sidebar</span>
                         </Button>
                       )}
-                      <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                      <Link
+                        href="/"
+                        className={cn(
+                          "flex items-center hover:opacity-80 transition-opacity",
+                          !isHomePage && "md:absolute md:left-6"
+                        )}
+                      >
                         <Terminal className="h-5 w-5 text-black dark:text-white" />
-                        <span className="ml-2 font-mono text-sm">Lineal UI</span>
+                        <span className="ml-2 font-mono text-sm">Gengar UI</span>
                       </Link>
                     </div>
                     <nav className="flex items-center space-x-4">
                       <Search />
-                      <Link 
-                        href="/docs" 
+                      <Link
+                        href="/docs"
                         className={cn(
                           "text-sm font-medium hover:underline underline-offset-4",
                           pathname.startsWith('/docs') && "underline"
@@ -74,8 +80,8 @@ export default function RootLayout({
                       >
                         Docs
                       </Link>
-                      <Link 
-                        href="/docs/components/action-bar" 
+                      <Link
+                        href="/docs/components/action-bar"
                         className={cn(
                           "text-sm font-medium hover:underline underline-offset-4",
                           pathname.startsWith('/docs/components') && "underline"

@@ -221,9 +221,9 @@ module.exports = {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">6. Start using Lineal UI components</h2>
+        <h2 className="text-xl font-semibold text-foreground">6. Start using Gengar UI components</h2>
         <p className="text-muted-foreground">
-          You can now start using Lineal UI components in your project. Import the components from your components folder and use them in your pages or other components.
+          You can now start using Gengar UI components in your project. Import the components from your components folder and use them in your pages or other components.
         </p>
         <Card className="overflow-hidden border-border bg-background">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">

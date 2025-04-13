@@ -30,11 +30,11 @@ export default function ActionBarPage() {
         <TabsContent value="code">
           <Card className="bg-background border-border overflow-hidden">
             <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -69,9 +69,9 @@ export function ActionBar({ onAction }: ActionBarProps) {
     <div className="bg-background text-foreground rounded-none overflow-hidden font-mono text-sm border border-border">
       <div className="flex items-center justify-between bg-background text-foreground px-4 py-2 border-b border-border">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-red))]/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]/80" />
+          <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]/80" />
         </div>
         <div className="text-center flex-grow text-muted-foreground">Action Bar</div>
         <div className="flex space-x-2">
@@ -197,11 +197,11 @@ export function ActionBar({ onAction }: ActionBarProps) {
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
         <Card className="bg-background border-border overflow-hidden">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -215,11 +215,11 @@ export function ActionBar({ onAction }: ActionBarProps) {
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
         <Card className="bg-background border-border overflow-hidden">
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>

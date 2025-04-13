@@ -5,7 +5,7 @@ export default function TypographyPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-foreground">Typography</h1>
       <p className="text-muted-foreground">
-        Lineal UI uses a carefully crafted typography system to create a consistent and readable interface. Here's an overview of the typography styles available.
+        Gengar UI uses a carefully crafted typography system to create a consistent and readable interface. Here's an overview of the typography styles available.
       </p>
 
       <div className="space-y-4">
@@ -79,7 +79,7 @@ export default function TypographyPage() {
         <Card className="overflow-hidden border-border bg-background p-6">
           <pre className="font-mono text-foreground">
             {`function helloWorld() {
-  console.log("Hello, Lineal UI!");
+  console.log("Hello, Gengar UI!");
 }`}
           </pre>
         </Card>

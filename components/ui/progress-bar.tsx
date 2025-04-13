@@ -15,7 +15,7 @@ const ProgressBar = React.forwardRef<
 
   return (
     <div className="font-mono text-sm flex items-center gap-4">
-      <div className="flex-1 font-mono text-white/90">
+      <div className="flex-1 font-mono text-foreground">
         [{Array(filledBlocks).fill('=').join('')}
         {emptyBlocks > 0 ? '>' : ''}
         {Array(emptyBlocks - (emptyBlocks > 0 ? 1 : 0)).fill(' ').join('')}] {progress}%

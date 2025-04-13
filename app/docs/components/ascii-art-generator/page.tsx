@@ -18,27 +18,27 @@ export default function AsciiArtGeneratorPage() {
       </div>
 
       <Tabs defaultValue="preview" className="space-y-4">
-        <TabsList className="bg-black border border-white/10">
-          <TabsTrigger value="preview" className="text-white data-[state=active]:bg-white/10">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-white data-[state=active]:bg-white/10">Code</TabsTrigger>
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
-          <Card className="bg-black border-white/10 p-6">
+          <Card className="bg-background border-border p-6">
             <AsciiArtGenerator />
           </Card>
         </TabsContent>
         <TabsContent value="code">
-          <Card className="bg-black border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          <Card className="bg-background border-border overflow-hidden">
+            <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+              <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
-            <pre className="p-4 text-white">
+            <pre className="p-4 text-foreground">
               <code className="text-sm">{`"use client"
 
 import * as React from "react"
@@ -99,24 +99,24 @@ export function AsciiArtGenerator() {
   }
 
   return (
-    <Card className="bg-black border-white/10 p-6 space-y-4">
-      <h2 className="text-xl font-bold text-white mb-4">ASCII Art Generator</h2>
+    <Card className="bg-background border-border p-6 space-y-4">
+      <h2 className="text-xl font-bold text-foreground mb-4">ASCII Art Generator</h2>
       <div className="flex space-x-2">
         <Input
           type="text"
           placeholder="Enter text for ASCII art"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="flex-grow bg-black text-white border-white/10"
+          className="flex-grow bg-background text-foreground border-border"
         />
-        <Button onClick={generateAsciiArt} className="bg-white text-black hover:bg-white/90">
+        <Button onClick={generateAsciiArt} variant="secondary">
           Generate
         </Button>
       </div>
       <Textarea
         value={asciiArt}
         readOnly
-        className="font-mono text-xs bg-black text-white border-white/10 h-40 w-full"
+        className="font-mono text-xs bg-background text-foreground border-border h-40 w-full"
         placeholder="ASCII art will appear here..."
       />
     </Card>
@@ -129,17 +129,17 @@ export function AsciiArtGenerator() {
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Installation</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">npm install @radix-ui/react-label</code>
           </pre>
         </Card>
@@ -147,22 +147,22 @@ export function AsciiArtGenerator() {
 
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">Usage</h2>
-        <Card className="bg-black border-white/10 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        <Card className="bg-background border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-red))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
+            <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <pre className="p-4 text-white">
+          <pre className="p-4 text-foreground">
             <code className="text-sm">{`import { AsciiArtGenerator } from "@/components/ui/ascii-art-generator"
 
 export default function MyComponent() {
   return (
-    <div className="p-4 bg-black text-white">
+    <div className="p-4">
       <AsciiArtGenerator />
     </div>
   )
@@ -173,13 +173,13 @@ export default function MyComponent() {
 
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/terminal" className="text-white hover:text-white/80">
+          <Link href="/docs/components/terminal" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Terminal
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/file-explorer" className="text-white hover:text-white/80">
+          <Link href="/docs/components/file-explorer" className="text-foreground hover:text-muted-foreground">
             File Explorer
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>

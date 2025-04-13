@@ -201,9 +201,9 @@ module.exports = {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">5. Start using Lineal UI components</h2>
+        <h2 className="text-xl font-semibold text-foreground">5. Start using Gengar UI components</h2>
         <p className="text-muted-foreground">
-          You can now start using Lineal UI components in your Next.js project. Copy the component files you need from our documentation and use them in your pages or components.
+          You can now start using Gengar UI components in your Next.js project. Copy the component files you need from our documentation and use them in your pages or components.
         </p>
       </div>
     </div>
