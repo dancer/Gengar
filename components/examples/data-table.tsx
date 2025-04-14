@@ -1,8 +1,8 @@
 export function ExampleDataTable() {
   return (
-    <div className="font-mono text-sm bg-muted/40 rounded-sm p-4">
+    <div className="font-mono text-sm">
       <div className="mb-4 text-[hsl(var(--terminal-green))]">$ list users --format table</div>
-      <div className="bg-background rounded-sm border border-border">
+      <div className="rounded-sm border border-border">
         <table className="w-full">
           <thead>
             <tr className="text-left border-b border-border">

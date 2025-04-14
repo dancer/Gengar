@@ -13,7 +13,7 @@ export function ExampleChat() {
   ])
 
   return (
-    <div className="h-[300px] flex flex-col bg-muted/40 rounded-sm p-4">
+    <div className="h-[300px] flex flex-col">
       <div className="flex-1 overflow-auto space-y-2">
         {messages.map((message, i) => (
           <div key={i} className="text-sm">
@@ -25,8 +25,8 @@ export function ExampleChat() {
         ))}
       </div>
       <div className="mt-4 flex gap-2">
-        <Input placeholder="Type a message..." className="flex-1 bg-background" />
-        <Button variant="outline" className="bg-background hover:bg-muted">Send</Button>
+        <Input placeholder="Type a message..." className="flex-1" />
+        <Button variant="outline">Send</Button>
       </div>
     </div>
   )
