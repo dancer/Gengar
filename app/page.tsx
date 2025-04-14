@@ -11,16 +11,16 @@ import { ExampleDataTable } from '@/components/examples/data-table'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-8 bg-black text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen py-8 bg-background dark:bg-black text-foreground">
       {/* Hero Section */}
       <div className="text-center space-y-6 max-w-2xl mx-auto px-4 mb-16">
         <div className="flex items-center justify-center mb-6">
-          <Terminal className="h-10 w-10" />
+          <Terminal className="h-10 w-10 text-foreground" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
           Terminal-inspired components for modern applications
         </h1>
-        <p className="text-base text-white/70 sm:text-lg max-w-xl mx-auto">
+        <p className="text-base text-muted-foreground sm:text-lg max-w-xl mx-auto">
           Beautiful, responsive components with a terminal aesthetic. Built with Tailwind CSS and open source.
         </p>
         <div className="flex items-center justify-center space-x-4">
@@ -40,28 +40,28 @@ export default function Home() {
 
       {/* Examples Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 max-w-6xl mx-auto w-full">
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Chat Interface</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Chat Interface</h3>
           <ExampleChat />
         </Card>
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Command Palette</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Command Palette</h3>
           <ExampleCommand />
         </Card>
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Cards</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Cards</h3>
           <ExampleCards />
         </Card>
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Form</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Form</h3>
           <ExampleForm />
         </Card>
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Authentication</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Authentication</h3>
           <ExampleAuthentication />
         </Card>
-        <Card className="p-4 bg-black border-white/10">
-          <h3 className="text-sm font-semibold mb-2">Data Table</h3>
+        <Card className="p-4 bg-background dark:bg-black border-border">
+          <h3 className="text-sm font-semibold mb-2 text-foreground">Data Table</h3>
           <ExampleDataTable />
         </Card>
       </div>

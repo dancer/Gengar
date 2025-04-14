@@ -1,28 +1,30 @@
 export function ExampleDataTable() {
   return (
-    <div className="font-mono text-sm">
-      <div className="mb-2 text-white/70">$ list users --format table</div>
-      <table className="w-full">
-        <thead>
-          <tr className="text-left border-b border-white/10">
-            <th className="py-2 text-white/70">ID</th>
-            <th className="py-2 text-white/70">Name</th>
-            <th className="py-2 text-white/70">Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-b border-white/10">
-            <td className="py-2">001</td>
-            <td className="py-2">Josh</td>
-            <td className="py-2">Admin</td>
-          </tr>
-          <tr>
-            <td className="py-2">002</td>
-            <td className="py-2">Ashu</td>
-            <td className="py-2">User</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="font-mono text-sm bg-muted/40 rounded-sm p-4">
+      <div className="mb-4 text-[hsl(var(--terminal-green))]">$ list users --format table</div>
+      <div className="bg-background rounded-sm border border-border">
+        <table className="w-full">
+          <thead>
+            <tr className="text-left border-b border-border">
+              <th className="px-4 py-2 text-muted-foreground font-medium">ID</th>
+              <th className="px-4 py-2 text-muted-foreground font-medium">Name</th>
+              <th className="px-4 py-2 text-muted-foreground font-medium">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-border">
+              <td className="px-4 py-2 text-foreground">001</td>
+              <td className="px-4 py-2 text-foreground">Josh</td>
+              <td className="px-4 py-2 text-foreground">Admin</td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-foreground">002</td>
+              <td className="px-4 py-2 text-foreground">Ashu</td>
+              <td className="px-4 py-2 text-foreground">User</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
