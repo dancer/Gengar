@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: 'dancer',
+      name: 'nishimiya',
       url: 'https://github.com/dancer'
     }
   ],
-  creator: 'dancer',
+  creator: 'nishimiya',
   icons: {
     icon: '/gengar.png',
     shortcut: '/gengar.png',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gengar UI',
     description: 'A modern, terminal-inspired component library for React applications.',
-    creator: '@dancer',
-    site: '@dancer',
+    creator: '@nishimiya',
+    site: '@nishimiya',
     images: [{
       url: 'https://geng.ar/large.png',
       width: 1200,
