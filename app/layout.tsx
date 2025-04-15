@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     creator: '@dancer',
     site: '@dancer',
     images: [{
-      url: 'https://geng.ar/og.png',
+      url: 'https://geng.ar/large.png',
       width: 1200,
       height: 630,
       alt: 'Gengar UI - Terminal-inspired React Components'
