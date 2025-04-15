@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     shortcut: '/gengar.png',
     apple: '/gengar.png'
   },
-  manifest: '/site.webmanifest',
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gengar-ui.vercel.app',
+    url: 'https://geng.ar',
     title: 'Gengar UI',
     description: 'A modern, terminal-inspired component library for React applications.',
     siteName: 'Gengar UI',
     images: [{
-      url: '/large.png',
+      url: 'https://geng.ar/large.png',
       width: 1200,
       height: 630,
       alt: 'Gengar UI - Terminal-inspired React Components'
@@ -63,7 +63,13 @@ export const metadata: Metadata = {
     title: 'Gengar UI',
     description: 'A modern, terminal-inspired component library for React applications.',
     creator: '@dancer',
-    images: ['/large.png']
+    site: '@dancer',
+    images: [{
+      url: 'https://geng.ar/og.png',
+      width: 1200,
+      height: 630,
+      alt: 'Gengar UI - Terminal-inspired React Components'
+    }]
   }
 }
 
