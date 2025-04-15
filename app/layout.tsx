@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     apple: '/gengar.png'
   },
   manifest: '/manifest.json',
+  alternates: {
+    canonical: 'https://geng.ar/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
