@@ -40,9 +40,7 @@ export const metadata: Metadata = {
   ],
   creator: 'nishimiya',
   icons: {
-    icon: [
-      { url: '/gengar.png', sizes: '32x32', type: 'image/png' }
-    ],
+    icon: '/gengar.png',
     shortcut: '/gengar.png',
     apple: '/gengar.png'
   },
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     siteName: 'Gengar UI',
     images: [{
-      url: '/og.png',
+      url: 'https://geng.ar/og.png',
       width: 1200,
       height: 630,
       alt: 'Gengar UI - Terminal-inspired React Components'
@@ -70,17 +68,12 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     creator: '@nishimiya',
     site: '@nishimiya',
-    images: [{
-      url: '/og.png',
+    images: {
+      url: 'https://geng.ar/og.png',
       alt: 'Gengar UI - Terminal-inspired React Components',
       width: 1200,
       height: 630
-    }]
-  },
-  other: {
-    'twitter:image': '/og.png',
-    'twitter:image:alt': 'Gengar UI - Terminal-inspired React Components',
-    'og:image': '/og.png'
+    }
   }
 }
 
