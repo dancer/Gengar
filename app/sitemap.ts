@@ -3,13 +3,11 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://geng.ar'
 
-  // Core pages
   const routes = [
     '',
     '/docs',
   ]
 
-  // Component documentation pages
   const componentPages = [
     '/docs/components/accordion',
     '/docs/components/action-bar',
@@ -52,4 +50,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly',
     priority: route === '' ? 1 : route === '/docs' ? 0.9 : 0.8,
   }))
-} 
+}

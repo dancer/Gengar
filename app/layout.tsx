@@ -16,6 +16,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://geng.ar'),
   title: {
     default: 'Gengar UI',
     template: '%s - Gengar UI'
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     siteName: 'Gengar UI',
     images: [{
-      url: 'https://geng.ar/large.png',
+      url: '/large.png',
       width: 1200,
       height: 630,
       alt: 'Gengar UI - Terminal-inspired React Components'
@@ -67,12 +68,7 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     creator: '@nishimiya',
     site: '@nishimiya',
-    images: [{
-      url: 'https://geng.ar/large.png',
-      width: 1200,
-      height: 630,
-      alt: 'Gengar UI - Terminal-inspired React Components'
-    }]
+    images: '/large.png'
   }
 }
 
