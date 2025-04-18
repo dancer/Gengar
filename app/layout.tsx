@@ -40,7 +40,9 @@ export const metadata: Metadata = {
   ],
   creator: 'nishimiya',
   icons: {
-    icon: '/gengar.png',
+    icon: [
+      { url: '/gengar.png', sizes: '32x32', type: 'image/png' }
+    ],
     shortcut: '/gengar.png',
     apple: '/gengar.png'
   },
@@ -74,6 +76,11 @@ export const metadata: Metadata = {
       width: 1200,
       height: 630
     }]
+  },
+  other: {
+    'twitter:image': '/og.png',
+    'twitter:image:alt': 'Gengar UI - Terminal-inspired React Components',
+    'og:image': '/og.png'
   }
 }
 
