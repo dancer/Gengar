@@ -50,7 +50,7 @@ const sectionSymbols = {
   "Home & Introduction": "○",
   "Components": "▲",
   "Installation": "□",
-}
+} as const
 
 export function Search() {
   const [open, setOpen] = React.useState(false)
@@ -89,7 +89,7 @@ export function Search() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0" align="start">
-        <Command className="bg-black text-white">
+        <Command className="bg-background text-foreground">
           <CommandInput placeholder="Type to search..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
@@ -100,7 +100,7 @@ export function Search() {
                     key={item.href}
                     onSelect={() => runCommand(() => router.push(item.href))}
                   >
-                    <span className="mr-2">{sectionSymbols[category]}</span>
+                    <span className="mr-2">{sectionSymbols[category as keyof typeof sectionSymbols]}</span>
                     {item.name}
                   </CommandItem>
                 ))}
