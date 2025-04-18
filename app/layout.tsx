@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     siteName: 'Gengar UI',
     images: [{
-      url: '/large.png',
+      url: '/og.png',
       width: 1200,
       height: 630,
       alt: 'Gengar UI - Terminal-inspired React Components'
@@ -68,7 +68,12 @@ export const metadata: Metadata = {
     description: 'A modern, terminal-inspired component library for React applications.',
     creator: '@nishimiya',
     site: '@nishimiya',
-    images: '/large.png'
+    images: [{
+      url: '/og.png',
+      alt: 'Gengar UI - Terminal-inspired React Components',
+      width: 1200,
+      height: 630
+    }]
   }
 }
 
