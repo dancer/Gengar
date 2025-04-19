@@ -118,8 +118,8 @@ export default function GitHubPage() {
             {/* Stats Card */}
             {userData && (
                 <div className="space-y-4">
-                    <Card ref={cardRef} className="relative overflow-hidden bg-black border-border shadow-[0_0_50px_rgba(0,255,0,0.05)]">
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/5 to-transparent z-0" />
+                    <Card ref={cardRef} className="relative overflow-hidden bg-background border-border shadow-[0_0_50px_rgba(0,255,0,0.05)]">
+                        <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/5 to-transparent dark:from-[#00ff00]/10 z-0" />
 
                         {/* Header with User Info */}
                         <div className="relative p-6 pb-4">
@@ -232,13 +232,13 @@ function StatBar({ label, value, maxValue }: {
                 <span className="text-muted-foreground">{label}</span>
                 <span className="text-foreground font-medium">{value}</span>
             </div>
-            <div className="h-2 bg-white/5 rounded-sm overflow-hidden">
+            <div className="h-2 bg-muted rounded-sm overflow-hidden">
                 <div
-                    className="h-full transition-all duration-500 bg-[#00ff00]/20"
+                    className="h-full transition-all duration-500 bg-foreground/20"
                     style={{
                         width: `${percentage}%`,
-                        boxShadow: '0 0 10px rgba(0, 255, 0, 0.3)'
-                    }}
+                        boxShadow: '0 0 10px rgb(var(--foreground) / 0.3)'
+                    } as React.CSSProperties}
                 />
             </div>
         </div>
