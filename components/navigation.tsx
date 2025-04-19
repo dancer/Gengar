@@ -39,6 +39,9 @@ const components = {
     { title: "ASCII Art Generator", href: "/docs/components/ascii-art-generator" },
     { title: "File Explorer", href: "/docs/components/file-explorer" },
     { title: "Network Monitor", href: "/docs/components/network-monitor" },
+  ],
+  "Custom": [
+    { title: "GitHub Stats", href: "/github" },
   ]
 }
 
@@ -54,7 +57,7 @@ export function Navigation({ className }: { className?: string }) {
       <div className="h-[calc(100vh-3.5rem)] overflow-auto py-2 px-2">
         <Accordion
           type="multiple"
-          defaultValue={["Getting Started", "Components"]}
+          defaultValue={["Getting Started", "Components", "Custom"]}
           className="w-full"
         >
           {Object.entries(components).map(([section, items]) => (

@@ -44,12 +44,16 @@ const searchItems = {
     { name: "Laravel", href: "/docs/installation/laravel" },
     { name: "Manual", href: "/docs/installation/manual" },
   ],
+  "Custom": [
+    { name: "GitHub Stats", href: "/github" },
+  ],
 }
 
 const sectionSymbols = {
   "Home & Introduction": "○",
   "Components": "▲",
   "Installation": "□",
+  "Custom": "◇",
 } as const
 
 export function Search() {
