@@ -1,5 +1,6 @@
 import { JetBrains_Mono } from 'next/font/google'
 import { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import { ClientLayout } from '@/components/client-layout'
 import './globals.css'
 
@@ -92,9 +93,10 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} font-mono bg-white dark:bg-black text-black dark:text-white antialiased`}
       >
-        <ClientLayout fontClass={jetbrainsMono.variable}>
+        <ClientLayout _fontClass={jetbrainsMono.variable}>
           {children}
         </ClientLayout>
+        <Analytics />
       </body>
     </html>
   )
