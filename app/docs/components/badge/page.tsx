@@ -1,11 +1,19 @@
-"use client"
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ArrowLeft, ArrowRight, Copy, Terminal, AlertCircle, CheckCircle2, XCircle } from 'lucide-react'
+import {
+  ArrowLeft,
+  ArrowRight,
+  Copy,
+  Terminal,
+  AlertCircle,
+  CheckCircle2,
+  XCircle,
+} from 'lucide-react'
 import Link from 'next/link'
-import { Badge } from "@/components/ui/badge"
+import { Badge } from '@/components/ui/badge'
 
 export default function BadgePage() {
   return (
@@ -14,15 +22,26 @@ export default function BadgePage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Badge</h1>
         <p className="text-lg text-muted-foreground">
-          Terminal-style status indicators and labels with pixel-perfect borders and glowing effects.
+          Terminal-style status indicators and labels with pixel-perfect borders
+          and glowing effects.
         </p>
       </div>
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-muted">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-muted">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -58,9 +77,18 @@ export default function BadgePage() {
               {/* Status Indicators */}
               <div className="flex flex-wrap gap-4">
                 <Badge className="h-5 w-5 p-0 flex items-center justify-center" />
-                <Badge variant="secondary" className="h-5 w-5 p-0 flex items-center justify-center" />
-                <Badge variant="outline" className="h-5 w-5 p-0 flex items-center justify-center" />
-                <Badge variant="destructive" className="h-5 w-5 p-0 flex items-center justify-center" />
+                <Badge
+                  variant="secondary"
+                  className="h-5 w-5 p-0 flex items-center justify-center"
+                />
+                <Badge
+                  variant="outline"
+                  className="h-5 w-5 p-0 flex items-center justify-center"
+                />
+                <Badge
+                  variant="destructive"
+                  className="h-5 w-5 p-0 flex items-center justify-center"
+                />
               </div>
             </div>
           </Card>
@@ -72,7 +100,11 @@ export default function BadgePage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-muted"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -129,7 +161,11 @@ export { Badge, badgeVariants }`}
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -150,7 +186,11 @@ export { Badge, badgeVariants }`}
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -187,13 +227,19 @@ export function BadgeDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/avatar" className="hover:text-muted-foreground">
+          <Link
+            href="/docs/components/avatar"
+            className="hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Avatar
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/button" className="hover:text-muted-foreground">
+          <Link
+            href="/docs/components/button"
+            className="hover:text-muted-foreground"
+          >
             Button
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -202,4 +248,3 @@ export function BadgeDemo() {
     </div>
   )
 }
-

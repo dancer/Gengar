@@ -20,14 +20,19 @@ export default function InstallationPage() {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">TypeScript</h2>
         <p className="text-muted-foreground">
-          This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
+          This project and the components are written in TypeScript. We
+          recommend using TypeScript for your project as well.
         </p>
         <p className="text-muted-foreground">
-          However we provide a JavaScript version of the components as well. The JavaScript version is available via the <code className="text-sm">.js</code> files.
+          However we provide a JavaScript version of the components as well. The
+          JavaScript version is available via the{' '}
+          <code className="text-sm">.js</code> files.
         </p>
 
         <p className="text-muted-foreground mt-6">
-          To opt-out of TypeScript, you can use the <code className="text-sm">.js</code> flag in your <code className="text-sm">components.json</code> file:
+          To opt-out of TypeScript, you can use the{' '}
+          <code className="text-sm">.js</code> flag in your{' '}
+          <code className="text-sm">components.json</code> file:
         </p>
         <Card>
           <TerminalWindow title="components.json">
@@ -52,7 +57,8 @@ export default function InstallationPage() {
         </Card>
 
         <p className="text-muted-foreground mt-6">
-          To configure import aliases, you can use the following <code className="text-sm">jsconfig.json</code>:
+          To configure import aliases, you can use the following{' '}
+          <code className="text-sm">jsconfig.json</code>:
         </p>
         <Card>
           <TerminalWindow title="jsconfig.json">
@@ -73,4 +79,3 @@ export default function InstallationPage() {
     </div>
   )
 }
-

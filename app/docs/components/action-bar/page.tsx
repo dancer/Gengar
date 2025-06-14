@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -13,14 +13,25 @@ export default function ActionBarPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Action Bar</h1>
         <p className="text-lg text-muted-foreground">
-          A terminal-inspired action bar with interactive buttons, search functionality, and expandable panels.
+          A terminal-inspired action bar with interactive buttons, search
+          functionality, and expandable panels.
         </p>
       </div>
 
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-muted">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-muted">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -34,7 +45,11 @@ export default function ActionBarPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-muted"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -201,12 +216,18 @@ export function ActionBar({ onAction }: ActionBarProps) {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
           <pre className="p-4 text-foreground">
-            <code className="text-sm">npm install @radix-ui/react-scroll-area lucide-react</code>
+            <code className="text-sm">
+              npm install @radix-ui/react-scroll-area lucide-react
+            </code>
           </pre>
         </Card>
       </div>
@@ -219,7 +240,11 @@ export function ActionBar({ onAction }: ActionBarProps) {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -243,13 +268,19 @@ export default function MyComponent() {
 
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/network-monitor" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/network-monitor"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Network Monitor
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/accordion" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/accordion"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Accordion
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -258,4 +289,3 @@ export default function MyComponent() {
     </div>
   )
 }
-

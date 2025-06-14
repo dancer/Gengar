@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import { Command } from 'lucide-react'
@@ -22,13 +22,18 @@ export function ExampleCommand() {
         <div className="mt-4 space-y-2">
           <Input placeholder="Type a command..." />
           <div className="text-sm rounded-sm border border-border">
-            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">Open...</div>
-            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">Save</div>
-            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">Close</div>
+            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">
+              Open...
+            </div>
+            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">
+              Save
+            </div>
+            <div className="px-3 py-1.5 hover:bg-muted cursor-pointer text-foreground">
+              Close
+            </div>
           </div>
         </div>
       )}
     </div>
   )
 }
-

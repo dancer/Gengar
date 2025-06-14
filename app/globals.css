@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,7 +28,7 @@
     --terminal-yellow: 38 92% 50%;
     --terminal-green: 142 71% 45%;
   }
- 
+
   .dark {
     --background: 0 0% 4.9%;
     --foreground: 0 0% 98%;
@@ -55,7 +55,7 @@
     --terminal-green: 142 71% 25%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;

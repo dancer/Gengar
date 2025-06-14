@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowLeft, ArrowRight, Copy } from 'lucide-react'
 import Link from 'next/link'
-import { CommandPalette } from "@/components/ui/command-palette"
+import { CommandPalette } from '@/components/ui/command-palette'
 
 export default function CommandPalettePage() {
   return (
@@ -14,15 +14,26 @@ export default function CommandPalettePage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Command Palette</h1>
         <p className="text-lg text-muted-foreground">
-          A searchable overlay that allows users to quickly access actions or navigate the application using keyboard commands.
+          A searchable overlay that allows users to quickly access actions or
+          navigate the application using keyboard commands.
         </p>
       </div>
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-muted">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-muted">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-muted"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -361,13 +372,19 @@ export default function MyComponent() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/card" className="hover:text-muted-foreground">
+          <Link
+            href="/docs/components/card"
+            className="hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Card
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/console-output" className="hover:text-muted-foreground">
+          <Link
+            href="/docs/components/console-output"
+            className="hover:text-muted-foreground"
+          >
             Console Output
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -376,4 +393,3 @@ export default function MyComponent() {
     </div>
   )
 }
-

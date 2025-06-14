@@ -9,4 +9,4 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: 'https://geng.ar/sitemap.xml',
   }
-} 
+}

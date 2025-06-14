@@ -21,7 +21,8 @@ export default function Home() {
           Terminal-inspired components for modern applications
         </h1>
         <p className="text-base text-muted-foreground sm:text-lg max-w-xl mx-auto">
-          Beautiful, responsive components with a terminal aesthetic. Built with Tailwind CSS and open source.
+          Beautiful, responsive components with a terminal aesthetic. Built with
+          Tailwind CSS and open source.
         </p>
         <div className="flex items-center justify-center space-x-4">
           <Button asChild className="flex items-center">
@@ -31,7 +32,11 @@ export default function Home() {
             </Link>
           </Button>
           <Button variant="outline" asChild className="flex items-center">
-            <a href="https://github.com/dancer/gengar" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/dancer/gengar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
           </Button>
@@ -41,11 +46,15 @@ export default function Home() {
       {/* Examples Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 max-w-6xl mx-auto w-full">
         <Card className="p-4 bg-background dark:bg-black border-border">
-          <h3 className="text-sm font-semibold mb-2 text-foreground">Chat Interface</h3>
+          <h3 className="text-sm font-semibold mb-2 text-foreground">
+            Chat Interface
+          </h3>
           <ExampleChat />
         </Card>
         <Card className="p-4 bg-background dark:bg-black border-border">
-          <h3 className="text-sm font-semibold mb-2 text-foreground">Command Palette</h3>
+          <h3 className="text-sm font-semibold mb-2 text-foreground">
+            Command Palette
+          </h3>
           <ExampleCommand />
         </Card>
         <Card className="p-4 bg-background dark:bg-black border-border">
@@ -57,15 +66,18 @@ export default function Home() {
           <ExampleForm />
         </Card>
         <Card className="p-4 bg-background dark:bg-black border-border">
-          <h3 className="text-sm font-semibold mb-2 text-foreground">Authentication</h3>
+          <h3 className="text-sm font-semibold mb-2 text-foreground">
+            Authentication
+          </h3>
           <ExampleAuthentication />
         </Card>
         <Card className="p-4 bg-background dark:bg-black border-border">
-          <h3 className="text-sm font-semibold mb-2 text-foreground">Data Table</h3>
+          <h3 className="text-sm font-semibold mb-2 text-foreground">
+            Data Table
+          </h3>
           <ExampleDataTable />
         </Card>
       </div>
     </div>
   )
 }
-

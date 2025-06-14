@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 
 export function ExampleChat() {
-  const [messages, setMessages] = useState([
+  const [messages, _setMessages] = useState([
     { role: 'system', content: 'Terminal initialized.' },
     { role: 'user', content: 'Hello!' },
     { role: 'assistant', content: 'Hi! How can I help you today?' },
@@ -17,7 +17,13 @@ export function ExampleChat() {
       <div className="flex-1 overflow-auto space-y-2">
         {messages.map((message, i) => (
           <div key={i} className="text-sm">
-            <span className={message.role === 'user' ? 'text-[hsl(var(--terminal-green))]' : 'text-[hsl(var(--terminal-blue))]'}>
+            <span
+              className={
+                message.role === 'user'
+                  ? 'text-[hsl(var(--terminal-green))]'
+                  : 'text-[hsl(var(--terminal-blue))]'
+              }
+            >
               {message.role === 'user' ? '>' : '$'}
             </span>
             <span className="ml-2 text-foreground">{message.content}</span>
@@ -31,4 +37,3 @@ export function ExampleChat() {
     </div>
   )
 }
-

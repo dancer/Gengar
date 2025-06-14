@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
-import { cn } from "@/lib/utils"
+import * as React from 'react'
+import * as ProgressPrimitive from '@radix-ui/react-progress'
+import { cn } from '@/lib/utils'
 
 const ProgressBar = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
@@ -18,12 +18,14 @@ const ProgressBar = React.forwardRef<
       <div className="flex-1 font-mono text-foreground">
         [{Array(filledBlocks).fill('=').join('')}
         {emptyBlocks > 0 ? '>' : ''}
-        {Array(emptyBlocks - (emptyBlocks > 0 ? 1 : 0)).fill(' ').join('')}] {progress}%
+        {Array(emptyBlocks - (emptyBlocks > 0 ? 1 : 0))
+          .fill(' ')
+          .join('')}
+        ] {progress}%
       </div>
     </div>
   )
 })
-ProgressBar.displayName = "ProgressBar"
+ProgressBar.displayName = 'ProgressBar'
 
 export { ProgressBar }
-

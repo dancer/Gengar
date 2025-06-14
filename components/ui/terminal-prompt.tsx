@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+import * as React from 'react'
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
@@ -11,7 +11,7 @@ const ScrollArea = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <ScrollAreaPrimitive.Root
     ref={ref}
-    className={cn("relative overflow-hidden", className)}
+    className={cn('relative overflow-hidden', className)}
     {...props}
   >
     <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit]">
@@ -26,16 +26,16 @@ ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
->(({ className, orientation = "vertical", ...props }, ref) => (
+>(({ className, orientation = 'vertical', ...props }, ref) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     ref={ref}
     orientation={orientation}
     className={cn(
-      "flex touch-none select-none transition-colors",
-      orientation === "vertical" &&
-      "h-full w-2.5 border-l border-l-transparent p-[1px]",
-      orientation === "horizontal" &&
-      "h-2.5 border-t border-t-transparent p-[1px]",
+      'flex touch-none select-none transition-colors',
+      orientation === 'vertical' &&
+        'h-full w-2.5 border-l border-l-transparent p-[1px]',
+      orientation === 'horizontal' &&
+        'h-2.5 border-t border-t-transparent p-[1px]',
       className
     )}
     {...props}
@@ -47,7 +47,7 @@ ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
 
 export function TerminalPrompt() {
   const [history, setHistory] = React.useState<string[]>([])
-  const [input, setInput] = React.useState("")
+  const [input, setInput] = React.useState('')
   const scrollAreaRef = React.useRef<HTMLDivElement>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -55,7 +55,7 @@ export function TerminalPrompt() {
     if (input.trim()) {
       const newHistory = [...history, `$ ${input}`, processCommand(input)]
       setHistory(newHistory)
-      setInput("")
+      setInput('')
       setTimeout(() => {
         if (scrollAreaRef.current) {
           scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight
@@ -66,15 +66,15 @@ export function TerminalPrompt() {
 
   const processCommand = (cmd: string): string => {
     switch (cmd.toLowerCase()) {
-      case "help":
-        return "Available commands: help, clear, echo, date"
-      case "clear":
+      case 'help':
+        return 'Available commands: help, clear, echo, date'
+      case 'clear':
         setHistory([])
-        return ""
-      case "date":
+        return ''
+      case 'date':
         return new Date().toLocaleString()
       default:
-        if (cmd.startsWith("echo ")) {
+        if (cmd.startsWith('echo ')) {
           return cmd.slice(5)
         }
         return `Command not found: ${cmd}`
@@ -93,7 +93,7 @@ export function TerminalPrompt() {
             <input
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={e => setInput(e.target.value)}
               className="flex-grow bg-transparent outline-none"
               aria-label="Terminal input"
             />
@@ -105,4 +105,3 @@ export function TerminalPrompt() {
 }
 
 export { ScrollArea, ScrollBar }
-

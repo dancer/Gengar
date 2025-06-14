@@ -3,10 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://geng.ar'
 
-  const routes = [
-    '',
-    '/docs',
-  ]
+  const routes = ['', '/docs']
 
   const componentPages = [
     '/docs/components/accordion',
@@ -44,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const allRoutes = [...routes, ...componentPages]
 
-  return allRoutes.map((route) => ({
+  return allRoutes.map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',

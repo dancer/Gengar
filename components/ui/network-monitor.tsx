@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import { Activity, Minus, Square, X } from 'lucide-react'
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface NetworkActivity {
   timestamp: number
@@ -19,14 +19,20 @@ export function NetworkMonitor() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       const methods = ['GET', 'POST', 'PUT', 'DELETE']
-      const endpoints = ['/users', '/posts', '/comments', '/products', '/orders']
+      const endpoints = [
+        '/users',
+        '/posts',
+        '/comments',
+        '/products',
+        '/orders',
+      ]
       const newActivity: NetworkActivity = {
         timestamp: Date.now(),
         type: Math.random() > 0.5 ? 'request' : 'response',
         method: methods[Math.floor(Math.random() * methods.length)],
         url: `https://api.example.com${endpoints[Math.floor(Math.random() * endpoints.length)]}`,
         status: Math.random() > 0.8 ? 404 : Math.random() > 0.9 ? 500 : 200,
-        duration: Math.floor(Math.random() * 1000)
+        duration: Math.floor(Math.random() * 1000),
       }
       setActivities(prev => [newActivity, ...prev].slice(0, 15))
     }, 2000)
@@ -42,11 +48,16 @@ export function NetworkMonitor() {
 
   const getMethodColor = (method: string) => {
     switch (method) {
-      case 'GET': return 'text-[hsl(var(--terminal-blue))]'
-      case 'POST': return 'text-[hsl(var(--terminal-green))]'
-      case 'PUT': return 'text-[hsl(var(--terminal-yellow))]'
-      case 'DELETE': return 'text-[hsl(var(--terminal-red))]'
-      default: return 'text-foreground'
+      case 'GET':
+        return 'text-[hsl(var(--terminal-blue))]'
+      case 'POST':
+        return 'text-[hsl(var(--terminal-green))]'
+      case 'PUT':
+        return 'text-[hsl(var(--terminal-yellow))]'
+      case 'DELETE':
+        return 'text-[hsl(var(--terminal-red))]'
+      default:
+        return 'text-foreground'
     }
   }
 
@@ -58,7 +69,9 @@ export function NetworkMonitor() {
           <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
           <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-muted-foreground">Network Monitor</div>
+        <div className="text-center flex-grow text-muted-foreground">
+          Network Monitor
+        </div>
         <div className="flex space-x-2">
           <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
           <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
@@ -80,7 +93,9 @@ export function NetworkMonitor() {
                 {new Date(activity.timestamp).toLocaleTimeString()}
               </span>
               {activity.method && (
-                <span className={`${getMethodColor(activity.method)} font-bold w-16`}>
+                <span
+                  className={`${getMethodColor(activity.method)} font-bold w-16`}
+                >
                   {activity.method}
                 </span>
               )}
@@ -88,7 +103,9 @@ export function NetworkMonitor() {
                 {activity.url}
               </span>
               {activity.status && (
-                <span className={`${getStatusColor(activity.status)} font-mono`}>
+                <span
+                  className={`${getStatusColor(activity.status)} font-mono`}
+                >
                   {activity.status}
                 </span>
               )}
@@ -104,4 +121,3 @@ export function NetworkMonitor() {
     </div>
   )
 }
-

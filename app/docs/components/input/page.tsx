@@ -1,11 +1,11 @@
-`use client`
+;`use client`
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowLeft, ArrowRight, Copy } from 'lucide-react'
 import Link from 'next/link'
-import { Input } from "@/components/ui/input"
+import { Input } from '@/components/ui/input'
 
 export default function InputPage() {
   return (
@@ -14,15 +14,26 @@ export default function InputPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Input</h1>
         <p className="text-lg text-muted-foreground">
-          Displays a form input field or a component that looks like an input field.
+          Displays a form input field or a component that looks like an input
+          field.
         </p>
       </div>
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-accent">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-accent">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -41,13 +52,16 @@ export default function InputPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-accent"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
             <pre className="p-4 text-foreground">
-              <code className="text-sm">{
-                `import * as React from "react"
+              <code className="text-sm">{`import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
@@ -82,14 +96,16 @@ export { Input }`}</code>
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
           <pre className="p-4 text-foreground">
-            <code className="text-sm">
-              npm install @radix-ui/react-slot
-            </code>
+            <code className="text-sm">npm install @radix-ui/react-slot</code>
           </pre>
         </Card>
       </div>
@@ -103,7 +119,11 @@ export { Input }`}</code>
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -120,7 +140,8 @@ export function InputDemo() {
       <Input type="file" />
     </div>
   )
-}`}</code>
+}`}
+            </code>
           </pre>
         </Card>
       </div>
@@ -128,13 +149,19 @@ export function InputDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/dialog" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/dialog"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Dialog
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/select" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/select"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Select
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -143,4 +170,3 @@ export function InputDemo() {
     </div>
   )
 }
-

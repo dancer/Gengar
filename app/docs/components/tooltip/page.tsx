@@ -1,14 +1,22 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ArrowLeft, ArrowRight, Copy, Terminal, Command, Settings, HelpCircle } from 'lucide-react'
+import {
+  ArrowLeft,
+  ArrowRight,
+  Copy,
+  Terminal,
+  Command,
+  Settings,
+  HelpCircle,
+} from 'lucide-react'
 import Link from 'next/link'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from '@/components/ui/tooltip'
 
 export default function TooltipPage() {
   return (
@@ -34,7 +42,11 @@ export default function TooltipPage() {
                 {/* Command Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="text-foreground border-border hover:bg-muted"
+                    >
                       <Command className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -46,7 +58,11 @@ export default function TooltipPage() {
                 {/* Terminal Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="text-foreground border-border hover:bg-muted"
+                    >
                       <Terminal className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -58,7 +74,11 @@ export default function TooltipPage() {
                 {/* Settings Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="text-foreground border-border hover:bg-muted"
+                    >
                       <Settings className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -70,7 +90,11 @@ export default function TooltipPage() {
                 {/* Help Tooltip */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-muted">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="text-foreground border-border hover:bg-muted"
+                    >
                       <HelpCircle className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -89,7 +113,11 @@ export default function TooltipPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-muted"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -139,14 +167,16 @@ export function TooltipDemo() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
           <pre className="p-4 text-foreground">
-            <code className="text-sm">
-              npm install @radix-ui/react-tooltip
-            </code>
+            <code className="text-sm">npm install @radix-ui/react-tooltip</code>
           </pre>
         </Card>
       </div>
@@ -160,7 +190,11 @@ export function TooltipDemo() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -195,13 +229,19 @@ export function TooltipDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/tabs" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/tabs"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Tabs
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/action-bar" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/action-bar"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Action Bar
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -210,4 +250,3 @@ export function TooltipDemo() {
     </div>
   )
 }
-

@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
+import * as React from 'react'
+import { DialogProps } from '@radix-ui/react-dialog'
+import { Command as CommandPrimitive } from 'cmdk'
 import { Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-import { cn } from "@/lib/utils"
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { cn } from '@/lib/utils'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -16,7 +16,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-background text-foreground",
+      'flex h-full w-full flex-col overflow-hidden rounded-md bg-background text-foreground',
       className
     )}
     {...props}
@@ -24,7 +24,7 @@ const Command = React.forwardRef<
 ))
 Command.displayName = CommandPrimitive.displayName
 
-interface CommandDialogProps extends DialogProps { }
+interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
@@ -43,12 +43,15 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-border px-3" cmdk-input-wrapper="">
+  <div
+    className="flex items-center border-b border-border px-3"
+    cmdk-input-wrapper=""
+  >
     <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
         className
       )}
       {...props}
@@ -64,7 +67,7 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
+    className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
     {...props}
   />
 ))
@@ -91,7 +94,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      'overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground',
       className
     )}
     {...props}
@@ -106,7 +109,7 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 h-px bg-border", className)}
+    className={cn('-mx-1 h-px bg-border', className)}
     {...props}
   />
 ))
@@ -119,7 +122,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50",
+      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50',
       className
     )}
     {...props}
@@ -135,14 +138,14 @@ const CommandShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground",
+        'ml-auto text-xs tracking-widest text-muted-foreground',
         className
       )}
       {...props}
     />
   )
 }
-CommandShortcut.displayName = "CommandShortcut"
+CommandShortcut.displayName = 'CommandShortcut'
 
 export function CommandPalette() {
   const [open, setOpen] = React.useState(false)
@@ -150,14 +153,14 @@ export function CommandPalette() {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setOpen((open) => !open)
+        setOpen(open => !open)
       }
     }
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
   }, [])
 
   const runCommand = React.useCallback((command: () => unknown) => {
@@ -168,7 +171,10 @@ export function CommandPalette() {
   return (
     <>
       <p className="text-xs sm:text-sm text-muted-foreground mb-2">
-        Press <kbd className="px-2 py-1.5 text-xs font-semibold bg-muted border border-border rounded-md">⌘K</kbd>
+        Press{' '}
+        <kbd className="px-2 py-1.5 text-xs font-semibold bg-muted border border-border rounded-md">
+          ⌘K
+        </kbd>
         <span className="hidden sm:inline"> to open the command palette</span>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -179,76 +185,174 @@ export function CommandPalette() {
             <CommandItem onSelect={() => runCommand(() => router.push('/'))}>
               Home
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/installation'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/installation'))
+              }
+            >
               Installation
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/typography'))}>
+            <CommandItem
+              onSelect={() => runCommand(() => router.push('/docs/typography'))}
+            >
               Typography
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Components">
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/action-bar'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/action-bar'))
+              }
+            >
               Action Bar
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/accordion'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/accordion'))
+              }
+            >
               Accordion
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/alert'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/alert'))
+              }
+            >
               Alert
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/avatar'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/avatar'))
+              }
+            >
               Avatar
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/badge'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/badge'))
+              }
+            >
               Badge
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/button'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/button'))
+              }
+            >
               Button
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/card'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/card'))
+              }
+            >
               Card
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/command-palette'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() =>
+                  router.push('/docs/components/command-palette')
+                )
+              }
+            >
               Command Palette
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/console-output'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/console-output'))
+              }
+            >
               Console Output
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/dialog'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/dialog'))
+              }
+            >
               Dialog
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/input'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/input'))
+              }
+            >
               Input
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/progress-bar'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/progress-bar'))
+              }
+            >
               Progress Bar
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/select'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/select'))
+              }
+            >
               Select
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/tabs'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/tabs'))
+              }
+            >
               Tabs
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/terminal-prompt'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() =>
+                  router.push('/docs/components/terminal-prompt')
+                )
+              }
+            >
               Terminal Prompt
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/tooltip'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/tooltip'))
+              }
+            >
               Tooltip
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/tree-view'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/tree-view'))
+              }
+            >
               Tree View
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/terminal'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/terminal'))
+              }
+            >
               Terminal
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/ascii-art-generator'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() =>
+                  router.push('/docs/components/ascii-art-generator')
+                )
+              }
+            >
               ASCII Art Generator
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/file-explorer'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => router.push('/docs/components/file-explorer'))
+              }
+            >
               File Explorer
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push('/docs/components/network-monitor'))}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() =>
+                  router.push('/docs/components/network-monitor')
+                )
+              }
+            >
               Network Monitor
             </CommandItem>
           </CommandGroup>
@@ -269,4 +373,3 @@ export {
   CommandShortcut,
   CommandSeparator,
 }
-

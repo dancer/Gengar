@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowLeft, ArrowRight, Copy } from 'lucide-react'
 import Link from 'next/link'
-import { ProgressBar } from "@/components/ui/progress-bar"
+import { ProgressBar } from '@/components/ui/progress-bar'
 import { useEffect, useState } from 'react'
 
 export default function ProgressBarPage() {
@@ -14,7 +14,7 @@ export default function ProgressBarPage() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setDemoProgress((prev) => {
+      setDemoProgress(prev => {
         if (prev >= 100) {
           clearInterval(timer)
           setStatus('Process complete')
@@ -45,8 +45,18 @@ export default function ProgressBarPage() {
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-accent">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-accent">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -63,7 +73,11 @@ export default function ProgressBarPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-accent"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -118,7 +132,11 @@ export function ProcessStatus() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -139,7 +157,11 @@ export function ProcessStatus() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -163,13 +185,19 @@ export function MyComponent() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/input" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/input"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Input
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/select" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/select"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Select
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -178,4 +206,3 @@ export function MyComponent() {
     </div>
   )
 }
-

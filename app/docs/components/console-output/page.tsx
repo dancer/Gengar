@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowLeft, ArrowRight, Copy } from 'lucide-react'
 import Link from 'next/link'
-import { ConsoleOutput } from "@/components/ui/console-output"
+import { ConsoleOutput } from '@/components/ui/console-output'
 
 export default function ConsoleOutputPage() {
   return (
@@ -12,15 +12,26 @@ export default function ConsoleOutputPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Console Output</h1>
         <p className="text-lg text-muted-foreground">
-          A component that mimics a terminal console, displaying scrollable text output with syntax highlighting.
+          A component that mimics a terminal console, displaying scrollable text
+          output with syntax highlighting.
         </p>
       </div>
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-accent">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-accent">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -34,7 +45,11 @@ export default function ConsoleOutputPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-accent"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -135,7 +150,11 @@ export function ConsoleOutput() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -156,7 +175,11 @@ export function ConsoleOutput() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -180,13 +203,19 @@ export function MyComponent() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/command-palette" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/command-palette"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Command Palette
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/dialog" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/dialog"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Dialog
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -195,4 +224,3 @@ export function MyComponent() {
     </div>
   )
 }
-

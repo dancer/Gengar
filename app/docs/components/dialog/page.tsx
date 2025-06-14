@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
 
 export default function DialogPage() {
   return (
@@ -19,15 +19,26 @@ export default function DialogPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Dialog</h1>
         <p className="text-lg text-muted-foreground">
-          A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+          A window overlaid on either the primary window or another dialog
+          window, rendering the content underneath inert.
         </p>
       </div>
 
       {/* Preview/Code Section */}
       <Tabs defaultValue="preview" className="space-y-4">
         <TabsList className="bg-background border border-border">
-          <TabsTrigger value="preview" className="text-foreground data-[state=active]:bg-accent">Preview</TabsTrigger>
-          <TabsTrigger value="code" className="text-foreground data-[state=active]:bg-accent">Code</TabsTrigger>
+          <TabsTrigger
+            value="preview"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Preview
+          </TabsTrigger>
+          <TabsTrigger
+            value="code"
+            className="text-foreground data-[state=active]:bg-accent"
+          >
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="space-y-4">
           <Card className="bg-background border-border p-6">
@@ -54,7 +65,11 @@ export default function DialogPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-accent"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -103,14 +118,16 @@ export function DialogDemo() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
           <pre className="p-4 text-foreground">
-            <code className="text-sm">
-              npm install @radix-ui/react-dialog
-            </code>
+            <code className="text-sm">npm install @radix-ui/react-dialog</code>
           </pre>
         </Card>
       </div>
@@ -124,7 +141,11 @@ export function DialogDemo() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-accent"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -162,13 +183,19 @@ export function DialogDemo() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/card" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/card"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Card
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/input" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/input"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Input
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -177,4 +204,3 @@ export function DialogDemo() {
     </div>
   )
 }
-

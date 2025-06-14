@@ -1,27 +1,28 @@
 import { JetBrains_Mono } from 'next/font/google'
 import { Metadata, Viewport } from 'next'
 import { ClientLayout } from '@/components/client-layout'
-import "./globals.css"
+import './globals.css'
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-mono'
+  variable: '--font-mono',
 })
 
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' }
-  ]
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://geng.ar'),
   title: {
     default: 'Gengar UI',
-    template: '%s - Gengar UI'
+    template: '%s - Gengar UI',
   },
-  description: 'A modern, terminal-inspired component library for React applications.',
+  description:
+    'A modern, terminal-inspired component library for React applications.',
   keywords: [
     'React',
     'Next.js',
@@ -30,19 +31,19 @@ export const metadata: Metadata = {
     'Terminal',
     'Design System',
     'Tailwind CSS',
-    'TypeScript'
+    'TypeScript',
   ],
   authors: [
     {
       name: 'nishimiya',
-      url: 'https://github.com/dancer'
-    }
+      url: 'https://github.com/dancer',
+    },
   ],
   creator: 'nishimiya',
   icons: {
     icon: '/gengar.png',
     shortcut: '/gengar.png',
-    apple: '/gengar.png'
+    apple: '/gengar.png',
   },
   manifest: '/manifest.json',
   alternates: {
@@ -53,28 +54,32 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://geng.ar',
     title: 'Gengar UI',
-    description: 'A modern, terminal-inspired component library for React applications.',
+    description:
+      'A modern, terminal-inspired component library for React applications.',
     siteName: 'Gengar UI',
-    images: [{
-      url: 'https://geng.ar/og.png',
-      width: 1200,
-      height: 630,
-      alt: 'Gengar UI - Terminal-inspired React Components'
-    }]
+    images: [
+      {
+        url: 'https://geng.ar/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Gengar UI - Terminal-inspired React Components',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Gengar UI',
-    description: 'A modern, terminal-inspired component library for React applications.',
+    description:
+      'A modern, terminal-inspired component library for React applications.',
     creator: '@nishimiya',
     site: '@nishimiya',
     images: {
       url: 'https://geng.ar/og.png',
       alt: 'Gengar UI - Terminal-inspired React Components',
       width: 1200,
-      height: 630
-    }
-  }
+      height: 630,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -84,10 +89,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jetbrainsMono.variable} font-mono bg-white dark:bg-black text-black dark:text-white antialiased`}>
-        <ClientLayout fontClass={jetbrainsMono.variable}>{children}</ClientLayout>
+      <body
+        className={`${jetbrainsMono.variable} font-mono bg-white dark:bg-black text-black dark:text-white antialiased`}
+      >
+        <ClientLayout fontClass={jetbrainsMono.variable}>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   )
 }
-

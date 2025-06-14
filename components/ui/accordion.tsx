@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronRight } from "lucide-react"
+import * as React from 'react'
+import * as AccordionPrimitive from '@radix-ui/react-accordion'
+import { ChevronRight } from 'lucide-react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 const Accordion = AccordionPrimitive.Root
 
@@ -14,11 +14,11 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b border-border", className)}
+    className={cn('border-b border-border', className)}
     {...props}
   />
 ))
-AccordionItem.displayName = "AccordionItem"
+AccordionItem.displayName = 'AccordionItem'
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
@@ -28,9 +28,9 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-3 px-4 font-mono text-sm transition-colors hover:bg-muted",
-        "text-foreground hover:text-foreground data-[state=open]:text-foreground",
-        "[&[data-state=open]>svg]:rotate-90",
+        'flex flex-1 items-center justify-between py-3 px-4 font-mono text-sm transition-colors hover:bg-muted',
+        'text-foreground hover:text-foreground data-[state=open]:text-foreground',
+        '[&[data-state=open]>svg]:rotate-90',
         className
       )}
       {...props}
@@ -51,7 +51,9 @@ const AccordionContent = React.forwardRef<
     className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
-    <div className={cn("px-4 py-3 font-mono text-muted-foreground", className)}>{children}</div>
+    <div className={cn('px-4 py-3 font-mono text-muted-foreground', className)}>
+      {children}
+    </div>
   </AccordionPrimitive.Content>
 ))
 

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
+import * as React from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Card } from '@/components/ui/card'
 import { Minus, Square, X } from 'lucide-react'
 
 const asciiPatterns: { [key: string]: string[] } = {
@@ -34,14 +34,20 @@ const asciiPatterns: { [key: string]: string[] } = {
   X: ['#   #', ' # # ', '  #  ', ' # # ', '#   #'],
   Y: ['#   #', ' # # ', '  #  ', '  #  ', '  #  '],
   Z: ['#####', '   # ', '  #  ', ' #   ', '#####'],
-  ' ': ['     ', '     ', '     ', '     ', '     ']
+  ' ': ['     ', '     ', '     ', '     ', '     '],
 }
 
 function textToAscii(text: string): string {
   const lines: string[][] = ['', '', '', '', ''].map(() => [])
 
   for (const char of text.toUpperCase()) {
-    const pattern = asciiPatterns[char] || ['?????', '?????', '?????', '?????', '?????']
+    const pattern = asciiPatterns[char] || [
+      '?????',
+      '?????',
+      '?????',
+      '?????',
+      '?????',
+    ]
     for (let i = 0; i < 5; i++) {
       lines[i].push(pattern[i])
     }
@@ -51,8 +57,8 @@ function textToAscii(text: string): string {
 }
 
 export function AsciiArtGenerator() {
-  const [text, setText] = React.useState("")
-  const [asciiArt, setAsciiArt] = React.useState("")
+  const [text, setText] = React.useState('')
+  const [asciiArt, setAsciiArt] = React.useState('')
 
   const generateAsciiArt = () => {
     setAsciiArt(textToAscii(text))
@@ -72,7 +78,9 @@ export function AsciiArtGenerator() {
           <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
           <div className="w-3 h-3 rounded-full bg-[hsl(var(--terminal-green))]" />
         </div>
-        <div className="text-center flex-grow text-muted-foreground">ASCII Art Generator</div>
+        <div className="text-center flex-grow text-muted-foreground">
+          ASCII Art Generator
+        </div>
         <div className="flex space-x-2">
           <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
           <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
@@ -85,14 +93,11 @@ export function AsciiArtGenerator() {
             type="text"
             placeholder="Enter text for ASCII art"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={e => setText(e.target.value)}
             onKeyDown={handleKeyDown}
             className="flex-grow bg-background text-foreground border-border"
           />
-          <Button
-            onClick={generateAsciiArt}
-            variant="secondary"
-          >
+          <Button onClick={generateAsciiArt} variant="secondary">
             Generate
           </Button>
         </div>
@@ -106,4 +111,3 @@ export function AsciiArtGenerator() {
     </div>
   )
 }
-

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import * as React from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { User, Bell, Settings, Search, X, Minus, Square } from 'lucide-react'
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface ActionBarProps {
   onAction?: (action: string) => void
@@ -14,9 +14,9 @@ export function ActionBar({ onAction }: ActionBarProps) {
   const [activeTab, setActiveTab] = React.useState<string | null>(null)
   const [searchOpen, setSearchOpen] = React.useState(false)
   const [notifications] = React.useState([
-    { id: 1, message: "New update available", time: "2 mins ago" },
-    { id: 2, message: "System backup completed", time: "1 hour ago" },
-    { id: 3, message: "Security scan finished", time: "3 hours ago" }
+    { id: 1, message: 'New update available', time: '2 mins ago' },
+    { id: 2, message: 'System backup completed', time: '1 hour ago' },
+    { id: 3, message: 'Security scan finished', time: '3 hours ago' },
   ])
 
   const handleAction = (action: string) => {
@@ -32,7 +32,9 @@ export function ActionBar({ onAction }: ActionBarProps) {
           <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
         </div>
-        <div className="text-center flex-grow text-muted-foreground">Action Bar</div>
+        <div className="text-center flex-grow text-muted-foreground">
+          Action Bar
+        </div>
         <div className="flex space-x-2">
           <Minus className="w-4 h-4 text-muted-foreground hover:text-foreground" />
           <Square className="w-4 h-4 text-muted-foreground hover:text-foreground" />
@@ -109,18 +111,26 @@ export function ActionBar({ onAction }: ActionBarProps) {
                   </div>
                   <div>
                     <div className="text-foreground">Josh Han</div>
-                    <div className="text-muted-foreground text-xs">Administrator</div>
+                    <div className="text-muted-foreground text-xs">
+                      Administrator
+                    </div>
                   </div>
                 </div>
-                <div className="text-muted-foreground text-xs pt-2">Last login: Today at 10:45 AM</div>
+                <div className="text-muted-foreground text-xs pt-2">
+                  Last login: Today at 10:45 AM
+                </div>
               </div>
             )}
             {activeTab === 'notifications' && (
               <div className="space-y-2">
                 {notifications.map(notification => (
                   <div key={notification.id} className="p-2 hover:bg-muted">
-                    <div className="text-foreground">{notification.message}</div>
-                    <div className="text-muted-foreground text-xs">{notification.time}</div>
+                    <div className="text-foreground">
+                      {notification.message}
+                    </div>
+                    <div className="text-muted-foreground text-xs">
+                      {notification.time}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -147,4 +157,3 @@ export function ActionBar({ onAction }: ActionBarProps) {
     </div>
   )
 }
-

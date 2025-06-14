@@ -51,29 +51,29 @@ npm install tailwindcss postcss autoprefixer @radix-ui/react-slot class-variance
 ```js
 // tailwind.config.js
 module.exports = {
-  darkMode: ["class"],
-  content: ["./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
+  darkMode: ['class'],
+  content: ['./components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: 'hsl(var(--border))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         // ... other theme variables
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
+  plugins: [require('tailwindcss-animate')],
+}
 ```
 
 4. **Start Building**: Import and use components in your project:
 
 ```tsx
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 
 export default function MyComponent() {
-  return <Button>Hello, Terminal!</Button>;
+  return <Button>Hello, Terminal!</Button>
 }
 ```
 

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowLeft, ArrowRight, Copy } from 'lucide-react'
 import Link from 'next/link'
-import { NetworkMonitor } from "@/components/ui/network-monitor"
+import { NetworkMonitor } from '@/components/ui/network-monitor'
 
 export default function NetworkMonitorPage() {
   return (
@@ -13,7 +13,8 @@ export default function NetworkMonitorPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Network Monitor</h1>
         <p className="text-lg text-muted-foreground">
-          A terminal-inspired network traffic monitor that displays real-time HTTP requests and responses.
+          A terminal-inspired network traffic monitor that displays real-time
+          HTTP requests and responses.
         </p>
       </div>
 
@@ -34,7 +35,11 @@ export default function NetworkMonitorPage() {
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
               <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
               <div className="flex-1" />
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-foreground hover:bg-muted"
+              >
                 <Copy className="h-4 w-4" />
               </Button>
             </div>
@@ -158,12 +163,18 @@ export function NetworkMonitor() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
           <pre className="p-4 text-foreground">
-            <code className="text-sm">npm install @radix-ui/react-scroll-area lucide-react</code>
+            <code className="text-sm">
+              npm install @radix-ui/react-scroll-area lucide-react
+            </code>
           </pre>
         </Card>
       </div>
@@ -176,7 +187,11 @@ export function NetworkMonitor() {
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-yellow))]" />
             <div className="h-3 w-3 rounded-full bg-[hsl(var(--terminal-green))]" />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground hover:bg-muted">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-foreground hover:bg-muted"
+            >
               <Copy className="h-4 w-4" />
             </Button>
           </div>
@@ -196,13 +211,19 @@ export default function MyComponent() {
 
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/file-explorer" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/file-explorer"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             File Explorer
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/action-bar" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/action-bar"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Action Bar
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -211,4 +232,3 @@ export default function MyComponent() {
     </div>
   )
 }
-

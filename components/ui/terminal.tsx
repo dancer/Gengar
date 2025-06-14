@@ -1,17 +1,21 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import { Minus, Square, X } from 'lucide-react'
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { cn } from "@/lib/utils"
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { cn } from '@/lib/utils'
 
 interface TerminalProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
 }
 
-export function Terminal({ title = "Terminal", className, ...props }: TerminalProps) {
+export function Terminal({
+  title = 'Terminal',
+  className,
+  ...props
+}: TerminalProps) {
   const [history, setHistory] = React.useState<string[]>([])
-  const [input, setInput] = React.useState("")
+  const [input, setInput] = React.useState('')
   const [cursorPosition, setCursorPosition] = React.useState(0)
   const inputRef = React.useRef<HTMLInputElement>(null)
   const scrollAreaRef = React.useRef<HTMLDivElement>(null)
@@ -19,7 +23,10 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
   React.useEffect(() => {
     const timer = setInterval(() => {
       if (inputRef.current) {
-        inputRef.current.style.caretColor = inputRef.current.style.caretColor === 'transparent' ? 'white' : 'transparent'
+        inputRef.current.style.caretColor =
+          inputRef.current.style.caretColor === 'transparent'
+            ? 'white'
+            : 'transparent'
       }
     }, 500)
 
@@ -37,24 +44,24 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
     if (input.trim()) {
       const newHistory = [...history, `$ ${input}`, processCommand(input)]
       setHistory(newHistory)
-      setInput("")
+      setInput('')
       setCursorPosition(0)
     }
   }
 
   const processCommand = (cmd: string): string => {
     switch (cmd.toLowerCase()) {
-      case "help":
-        return "Available commands: help, clear, echo, date, whoami"
-      case "clear":
+      case 'help':
+        return 'Available commands: help, clear, echo, date, whoami'
+      case 'clear':
         setHistory([])
-        return ""
-      case "date":
+        return ''
+      case 'date':
         return new Date().toLocaleString()
-      case "whoami":
-        return "guest@gengar-ui"
+      case 'whoami':
+        return 'guest@gengar-ui'
       default:
-        if (cmd.startsWith("echo ")) {
+        if (cmd.startsWith('echo ')) {
           return cmd.slice(5)
         }
         return `Command not found: ${cmd}`
@@ -70,7 +77,13 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
   }
 
   return (
-    <div className={cn("bg-black text-white rounded-md overflow-hidden font-mono text-sm border border-white/20", className)} {...props}>
+    <div
+      className={cn(
+        'bg-black text-white rounded-md overflow-hidden font-mono text-sm border border-white/20',
+        className
+      )}
+      {...props}
+    >
       <div className="flex items-center justify-between bg-black text-white px-4 py-2 border-b border-white/20">
         <div className="flex space-x-2">
           <div className="w-3 h-3 rounded-full bg-gray-800" />
@@ -86,7 +99,9 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
       </div>
       <ScrollArea className="h-64 p-4">
         {history.map((line, index) => (
-          <div key={index} className="mb-1">{line}</div>
+          <div key={index} className="mb-1">
+            {line}
+          </div>
         ))}
         <form onSubmit={handleSubmit} className="flex items-center">
           <span className="mr-2">$</span>
@@ -94,7 +109,7 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
             ref={inputRef}
             type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             className="flex-grow bg-transparent outline-none"
             style={{ caretColor: 'transparent' }}
@@ -109,4 +124,3 @@ export function Terminal({ title = "Terminal", className, ...props }: TerminalPr
     </div>
   )
 }
-

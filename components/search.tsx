@@ -1,59 +1,71 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import { useRouter } from 'next/navigation'
 import { SearchIcon } from 'lucide-react'
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from '@/components/ui/command'
+import { Button } from '@/components/ui/button'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
 
 const searchItems = {
-  "Home & Introduction": [
-    { name: "Home", href: "/" },
-    { name: "Introduction", href: "/docs" },
-    { name: "Typography", href: "/docs/typography" },
+  'Home & Introduction': [
+    { name: 'Home', href: '/' },
+    { name: 'Introduction', href: '/docs' },
+    { name: 'Typography', href: '/docs/typography' },
   ],
-  "Components": [
-    { name: "Action Bar", href: "/docs/components/action-bar" },
-    { name: "Accordion", href: "/docs/components/accordion" },
-    { name: "Alert", href: "/docs/components/alert" },
-    { name: "Avatar", href: "/docs/components/avatar" },
-    { name: "Badge", href: "/docs/components/badge" },
-    { name: "Button", href: "/docs/components/button" },
-    { name: "Card", href: "/docs/components/card" },
-    { name: "Command Palette", href: "/docs/components/command-palette" },
-    { name: "Console Output", href: "/docs/components/console-output" },
-    { name: "Dialog", href: "/docs/components/dialog" },
-    { name: "Input", href: "/docs/components/input" },
-    { name: "Progress Bar", href: "/docs/components/progress-bar" },
-    { name: "Select", href: "/docs/components/select" },
-    { name: "Tabs", href: "/docs/components/tabs" },
-    { name: "Terminal Prompt", href: "/docs/components/terminal-prompt" },
-    { name: "Tooltip", href: "/docs/components/tooltip" },
-    { name: "Tree View", href: "/docs/components/tree-view" },
-    { name: "Terminal", href: "/docs/components/terminal" },
-    { name: "ASCII Art Generator", href: "/docs/components/ascii-art-generator" },
-    { name: "File Explorer", href: "/docs/components/file-explorer" },
-    { name: "Network Monitor", href: "/docs/components/network-monitor" },
+  Components: [
+    { name: 'Action Bar', href: '/docs/components/action-bar' },
+    { name: 'Accordion', href: '/docs/components/accordion' },
+    { name: 'Alert', href: '/docs/components/alert' },
+    { name: 'Avatar', href: '/docs/components/avatar' },
+    { name: 'Badge', href: '/docs/components/badge' },
+    { name: 'Button', href: '/docs/components/button' },
+    { name: 'Card', href: '/docs/components/card' },
+    { name: 'Command Palette', href: '/docs/components/command-palette' },
+    { name: 'Console Output', href: '/docs/components/console-output' },
+    { name: 'Dialog', href: '/docs/components/dialog' },
+    { name: 'Input', href: '/docs/components/input' },
+    { name: 'Progress Bar', href: '/docs/components/progress-bar' },
+    { name: 'Select', href: '/docs/components/select' },
+    { name: 'Tabs', href: '/docs/components/tabs' },
+    { name: 'Terminal Prompt', href: '/docs/components/terminal-prompt' },
+    { name: 'Tooltip', href: '/docs/components/tooltip' },
+    { name: 'Tree View', href: '/docs/components/tree-view' },
+    { name: 'Terminal', href: '/docs/components/terminal' },
+    {
+      name: 'ASCII Art Generator',
+      href: '/docs/components/ascii-art-generator',
+    },
+    { name: 'File Explorer', href: '/docs/components/file-explorer' },
+    { name: 'Network Monitor', href: '/docs/components/network-monitor' },
   ],
-  "Installation": [
-    { name: "Next.js", href: "/docs/installation/nextjs" },
-    { name: "Vite", href: "/docs/installation/vite" },
-    { name: "Remix", href: "/docs/installation/remix" },
-    { name: "Astro", href: "/docs/installation/astro" },
-    { name: "Laravel", href: "/docs/installation/laravel" },
-    { name: "Manual", href: "/docs/installation/manual" },
+  Installation: [
+    { name: 'Next.js', href: '/docs/installation/nextjs' },
+    { name: 'Vite', href: '/docs/installation/vite' },
+    { name: 'Remix', href: '/docs/installation/remix' },
+    { name: 'Astro', href: '/docs/installation/astro' },
+    { name: 'Laravel', href: '/docs/installation/laravel' },
+    { name: 'Manual', href: '/docs/installation/manual' },
   ],
-  "Custom": [
-    { name: "GitHub Stats", href: "/github" },
-  ],
+  Custom: [{ name: 'GitHub Stats', href: '/github' }],
 }
 
 const sectionSymbols = {
-  "Home & Introduction": "○",
-  "Components": "▲",
-  "Installation": "□",
-  "Custom": "◇",
+  'Home & Introduction': '○',
+  Components: '▲',
+  Installation: '□',
+  Custom: '◇',
 } as const
 
 export function Search() {
@@ -62,14 +74,14 @@ export function Search() {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setOpen((open) => !open)
+        setOpen(open => !open)
       }
     }
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
   }, [])
 
   const runCommand = React.useCallback((command: () => unknown) => {
@@ -99,12 +111,14 @@ export function Search() {
             <CommandEmpty>No results found.</CommandEmpty>
             {Object.entries(searchItems).map(([category, items]) => (
               <CommandGroup key={category} heading={category}>
-                {items.map((item) => (
+                {items.map(item => (
                   <CommandItem
                     key={item.href}
                     onSelect={() => runCommand(() => router.push(item.href))}
                   >
-                    <span className="mr-2">{sectionSymbols[category as keyof typeof sectionSymbols]}</span>
+                    <span className="mr-2">
+                      {sectionSymbols[category as keyof typeof sectionSymbols]}
+                    </span>
                     {item.name}
                   </CommandItem>
                 ))}
@@ -116,4 +130,3 @@ export function Search() {
     </Popover>
   )
 }
-

@@ -1,14 +1,22 @@
 export function ExampleDataTable() {
   return (
     <div className="font-mono text-sm">
-      <div className="mb-4 text-[hsl(var(--terminal-green))]">$ list users --format table</div>
+      <div className="mb-4 text-[hsl(var(--terminal-green))]">
+        $ list users --format table
+      </div>
       <div className="rounded-sm border border-border">
         <table className="w-full">
           <thead>
             <tr className="text-left border-b border-border">
-              <th className="px-4 py-2 text-muted-foreground font-medium">ID</th>
-              <th className="px-4 py-2 text-muted-foreground font-medium">Name</th>
-              <th className="px-4 py-2 text-muted-foreground font-medium">Role</th>
+              <th className="px-4 py-2 text-muted-foreground font-medium">
+                ID
+              </th>
+              <th className="px-4 py-2 text-muted-foreground font-medium">
+                Name
+              </th>
+              <th className="px-4 py-2 text-muted-foreground font-medium">
+                Role
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -28,4 +36,3 @@ export function ExampleDataTable() {
     </div>
   )
 }
-

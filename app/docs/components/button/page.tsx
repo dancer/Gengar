@@ -1,5 +1,14 @@
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, Terminal, Power, X, ChevronRight, Play, Square } from 'lucide-react'
+import {
+  ArrowLeft,
+  ArrowRight,
+  Terminal,
+  Power,
+  X,
+  ChevronRight,
+  Play,
+  Square,
+} from 'lucide-react'
 import Link from 'next/link'
 import { ComponentLayout } from '@/components/docs/component-layout'
 
@@ -112,13 +121,19 @@ export default function ButtonPage() {
       {/* Navigation */}
       <div className="flex items-center justify-between">
         <Button variant="outline" asChild>
-          <Link href="/docs/components/badge" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/badge"
+            className="text-foreground hover:text-muted-foreground"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Badge
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/docs/components/card" className="text-foreground hover:text-muted-foreground">
+          <Link
+            href="/docs/components/card"
+            className="text-foreground hover:text-muted-foreground"
+          >
             Card
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
@@ -127,4 +142,3 @@ export default function ButtonPage() {
     </ComponentLayout>
   )
 }
-
